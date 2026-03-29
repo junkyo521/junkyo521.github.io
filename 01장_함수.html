@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>quarto-input133675c7cf8d58ef – 미적분학 학습</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="quarto-math.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">미적분학 학습</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<p>$ $</p>
+<section id="장-함수" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 1장 함수</h1>
+<p>함수는 과학적 사고의 기초가 되는 수학적 개념이다. 또한 미적분학에서 다루는 기본적인 대상이 함수이다. 고등학교과정의 미분적분학에서는 다항함수, <code>삼각함수</code>, 지수함수, 로그함수를 기본함수로 하여 미분과 적분에 대한 내용들을 학습하였을 것이다.</p>
+<p>대학과정에서는 미분적분학에서 중요하게 다룰 역삼각 함수를 살펴보기 위하여 역함수의 정의와 성질들을 언급한 후 역삼각함수를 정의하고 성질들을 살펴본다.</p>
+<section id="함수의-성질" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="함수의-성질"><span class="header-section-number">1.1</span> 1.1 함수의 성질</h2>
+<p>먼저 함수의 정의와 함수를 판단하는 방법을 소개하고 함수들의 연산, 합성함수의 개념을 학습한다.</p>
+<div class="defn">
+<p><strong> 정의. 함수 </strong> <br></p>
+<p>집합 <span class="math inline">\(X~\)</span>의 각 원소 <span class="math inline">\(x\)</span>에 집합 <span class="math inline">\(Y~\)</span>의 원소 <span class="math inline">\(y\)</span>가 오직 하나만 대응할 때 <span class="math inline">\(X~\)</span>에서 <span class="math inline">\(Y~\)</span>로의 <b>함수 (function)</b> 또는 <b>사상(mapping)</b>이라고 한다. 함수의 기호는 다음과 같이 나타낸다.</p>
+<p><span class="math display">\[ f:X ~\to Y
+\]</span></p>
+<p>이때, 집합 <span class="math inline">\(X\)</span>를 함수 <span class="math inline">\(f\)</span>의 <b>정의역(domain)</b>, 집합 <span class="math inline">\(Y\)</span>를 함수 <span class="math inline">\(f\)</span>의 <b>공역(codomain)</b>이라 한다. 또한 <span class="math inline">\(f(x)\)</span>를 <span class="math inline">\(f\)</span>에 의한 <span class="math inline">\(x\)</span>의 함수값이라 하고 <span class="math inline">\(y=f(x)\)</span>로 나타내며 <span class="math inline">\(Y~\)</span>의 부분집합</p>
+<p><span class="math display">\[\left\{ f(x) \mid x \in X \right\}\]</span></p>
+<p>를 함수 <span class="math inline">\(f\)</span>의 <b>치역(range)</b>이라 한다. 이때 <span class="math inline">\(x\)</span> 를 <b>독립변수(independent variable)</b>라 하고 , <span class="math inline">\(y\)</span> 를 <b>종속변수(dependent variable)</b>라 한다</p>
+</div>
+<section id="음함수" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="음함수"><span class="header-section-number">1.1.1</span> 1.1.1 음함수</h3>
+<p><strong>음함수</strong>는 독립변수 <span class="math inline">\(x\)</span>와 종속변수 <span class="math inline">\(y\)</span> 사이의 관계가 <span class="math display">\[f(x, \ y)=0
+\]</span>으로 정해지는 함수이다.</p>
+<p><strong>양함수</strong> 음함수와 대비하여 <span class="math inline">\(y = f(x)\)</span> 꼴로 주어진 함수를 <strong>양함수</strong>(explicit function)라고 하지만, ‘양의 함수’(positive function)라는 다른 뜻과 혼용되기도 한다.</p>
+<section id="보기" class="level4" data-number="1.1.1.1">
+<h4 data-number="1.1.1.1" class="anchored" data-anchor-id="보기"><span class="header-section-number">1.1.1.1</span> 보기</h4>
+<p>다음의 함수들은 음함수이다.</p>
+<ol type="i">
+<li><p><span class="math inline">\(2x+y-3=0\)</span></p></li>
+<li><p><span class="math inline">\(x^2+y^2-2=0\)</span></p></li>
+<li><p><span class="math inline">\(x^3 +x^2y^2+y^5+1=0\)</span></p></li>
+</ol>
+<p>위 보기 (i)을 <span class="math inline">\(y\)</span>에 대하여 양함수의 꼴로 정리하면 <span class="math inline">\(y=-2x+3\)</span>이다.</p>
+<p>보기 (ii)에서는</p>
+<p><span class="math display">\[x^2+y^2 -2 =0 \quad \Longrightarrow \quad y^2=2-x^2 \quad \Longrightarrow \quad y=\pm \sqrt{2-x^2}
+\]</span></p>
+<p>이므로 <span class="math inline">\(x=1\)</span>이면 <span class="math inline">\(y =\pm 1\)</span>이다. 그러므로 $ y$는 <span class="math inline">\(x\)</span>에 대한 함수가 아니다. 그러나 이 식이 두 개의 함수</p>
+<p><span class="math display">\[y=\sqrt{2-x^2}, \qquad y=- \sqrt{2-x^2}\]</span></p>
+<p>을 나타낸다고 생각하면 <span class="math inline">\(y\)</span>는 <span class="math inline">\(x\)</span>의 함수로 생각할 수 있다(이러한 함수를 <strong>다가함수</strong>라고 한다).</p>
+<p>보기 (iii)의 경우 <span class="math inline">\(y\)</span>에 대하여 정리하는 것이 쉽지 않지만, 부분적으로 <span class="math inline">\(y\)</span>는 <span class="math inline">\(x\)</span>에 의하여 정해진다.</p>
+</section>
+</section>
+<section id="수직선-판정법" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="수직선-판정법"><span class="header-section-number">1.1.2</span> 1.1.2 수직선 판정법</h3>
+<p>주어진 그래프가 함수인지 아닌지를 판단하기 위해서는 정의역에 속하는 임의의 <span class="math inline">\(x\)</span>값에서<span class="math inline">\(y\)</span> 축에 평행 한 수직선이 그래프와 만나는 점이 한 개 , 즉 <span class="math inline">\(x\)</span>값에 하나의<span class="math inline">\(y\)</span> 값이 대응됨을 살펴보면 된다.</p>
+<div class="exa">
+<p><strong>예제 </strong><br></p>
+<p>다음 그래프가 함수가 되는지 판단하여라.</p>
+<ol type="1">
+<li><p>$ y=x ^ {2} <span class="math inline">\((2)\)</span> x ^ {2} +y ^ {2} =r ^ {2} $</p></li>
+<li><p>$ y ^ {2} = 4px~(p&gt;0) <span class="math inline">\((4)\)</span> y= $</p></li>
+</ol>
+</div>
+<p><b>(풀이)</b></p>
+<div>
+<div style="float:left;margin-right:5px;">
+<pre><code>&lt;img src="./images/1장_함수Im1.png" alt="Snow" style="width:100%"&gt;
+&lt;figcaption&gt;(1) 함수이다. $y=x ^ {2}$&lt;/figcaption&gt; </code></pre>
+</div>
+<div style="float:left;margin-right:5px;">
+<pre><code>&lt;img src="./images/1장_함수Im2.png" alt="Forest" style="width:100%"&gt;
+&lt;center&gt;
+ &lt;figcaption&gt;(2) 함수가 아니다. $x ^ {2} +y ^ {2} =1$&lt;/figcaption&gt; &lt;/center&gt;</code></pre>
+</div>
+</div>
+<br>
+<div>
+<div style="float:left;margin-right:5px;">
+<pre><code>&lt;img src="./images/1장_함수Im3.png" alt="Mountains" style="width:90%"&gt;
+  (3) 함수가 아니다.</code></pre>
+</div>
+<div style="float:left;margin-right:5px;">
+<pre><code>&lt;img src="./images/1장_함수Im4.png" alt="Mountains" style="width:90%"&gt;
+  (4) 함수이다. ■</code></pre>
+</div>
+</div>
+<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>var(<span class="st">"x"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>f  <span class="op">=</span> x<span class="op">^</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>x <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>f.plot(<span class="op">-</span><span class="dv">6</span>,<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-code_folding="[]">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>load(<span class="st">'ch1.sage'</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x,y<span class="op">=</span>var(<span class="st">"x y"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> y<span class="op">==</span>x<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>bd<span class="op">=</span><span class="dv">3</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>음함수그래프(eq,bd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> x<span class="op">^</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">^</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">2</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>bd<span class="op">=</span><span class="dv">2</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>음함수그래프(eq,bd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> y<span class="op">^</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">4</span><span class="op">*</span>x </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>bd<span class="op">=</span><span class="dv">7</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>음함수그래프(eq,bd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:42:08.377165Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:42:07.732934Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> y  <span class="op">==</span> floor(x)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>bd<span class="op">=</span><span class="dv">3</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>음함수그래프(eq,bd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="함수의-역상preimage과-치역" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="함수의-역상preimage과-치역"><span class="header-section-number">1.1.3</span> 1.1.3 함수의 역상(preimage)과 치역</h3>
+<p>두 집합 <span class="math inline">\(X,~Y\)</span>에 대하여 <span class="math inline">\(X\)</span>의 각 원소를 <span class="math inline">\(Y\)</span>의 오직 하나의 원소에 대응시키는 관계인 함수에서 다음과 같이 정의한다.</p>
+<div class="defn">
+<p><strong> 정의. </strong> <br></p>
+<p>정의역 <span class="math inline">\(X\)</span>에 포함되는 원소 <span class="math inline">\(y\)</span>가 공역 $Y $의 원소 $ y=f(x)$에 대응할 때 $y $를 <span class="math inline">\(x\)</span>의 <b>상(image)</b>이라 하며 <span class="math inline">\(x\)</span>를 <b>독립변수(independent variable)</b>, <span class="math inline">\(y\)</span>를 <b>종속변수(dependent variable)</b>라 한다. 또한 <span class="math inline">\(x\)</span>를 <span class="math inline">\(y\)</span> 의 <b>역상(preimage)</b>이라 하며 이 역상의 집합을</p>
+<p><span class="math display">\[{f^{ - 1}}(y) = \{ x \in V|f(x) = y\} \]</span></p>
+<p>로 표시하고 특히 집합 <span class="math inline">\({f^{ - 1}}(0)\)</span> 을 <b>핵(kernel)</b>이라 한다. 정의역 <span class="math inline">\(X\)</span>의 모든 원소 <span class="math inline">\(x\)</span>에 대응하는 상 전체의 집합 $R(f)={ f(x)|x X} $ 을 <b>치역(Range)</b>이라 한다.</p>
+</div>
+<figure class="figure">
+<center>
+<img src="./images/핵치역3AA.jpg" width="70%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+</figcaption>
+</center>
+</figure>
+</section>
+<section id="함수의-종류" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="함수의-종류"><span class="header-section-number">1.1.4</span> 1.1.4 함수의 종류</h3>
+<div class="defn">
+<p><strong> 정의. </strong> <br></p>
+<ol type="1">
+<li><p><b>일대일 함수(one-to-one function)</b> 또는 <b>단사함수(injection)</b>란 함수 <span class="math inline">\(f: X ~\rightarrow Y~\)</span>일 때 임의의 <span class="math inline">\(x _ {1} , x _ {2} \in X\)</span>에 대하여 <span class="math inline">\(x _ {1} \neq x _ {2}\)</span>이면 <span class="math inline">\(f(x _ {1} ) \neq f(x _ {2} )\)</span>가 성립하는 함수이다.</p></li>
+<li><p><b>공역과 치역이 일치하는 함수(onto, 대응함수 correspondence function)</b> 또는 <b>전사함수(surjection)</b>란 함수 <span class="math inline">\(f: X ~\rightarrow Y\)</span>에 대하여 공역과 치역이 일치할 때 즉, <span class="math inline">\(Y=f(X)\)</span>가 성립하는 함수이다.</p></li>
+<li><p><b>일대일 대응함수(one-to-one correspondence)</b> 또는 <b>전단사함수(bijection)</b>란 함수 <span class="math inline">\(f\)</span>가 단사이고 전사인 함수이다.</p></li>
+<li><p><b>항등함수(identity function)</b>란 함수 <span class="math inline">\(f\)</span>가 모든 <span class="math inline">\(x \in X~\)</span>에 대하여 <span class="math inline">\(f(x)=x\)</span>가 성립하는 함수이다.</p></li>
+</ol>
+</div>
+<p>▪ 수평선 판정법</p>
+<blockquote class="blockquote">
+<p>함수가 일대일 함수가 되기 위해서는 그래프가 모든 수평선과 두 번 이상 만나지 않아야 한다.</p>
+</blockquote>
+</section>
+<section id="함수의-연산" class="level3" data-number="1.1.5">
+<h3 data-number="1.1.5" class="anchored" data-anchor-id="함수의-연산"><span class="header-section-number">1.1.5</span> 1.1.5 함수의 연산</h3>
+<div class="defn">
+<p><strong> 정의. 함수의 연산 </strong> <br></p>
+<p>함수 <span class="math inline">\(f\)</span>와 <span class="math inline">\(g\)</span>의 정의역이 각각 <span class="math inline">\(X _ {1}, ~X _ {2} \subset X\)</span> 라고 할 때 <span class="math inline">\(f+g\)</span>, <span class="math inline">\(f-g\)</span>, <span class="math inline">\(f g\)</span>를 다음과 같이 정의한다. 모든 <span class="math inline">\(x \in X _ {1} \cap X _ {2}\)</span>에 대하여</p>
+<ol type="1">
+<li><p><span class="math inline">\((f+g) (x)= f(x) + g(x)\)</span>이고</p></li>
+<li><p><span class="math inline">\((f-g) (x)=f(x)-g(x)\)</span>이며</p></li>
+<li><p><span class="math inline">\((f g )(x)=f(x) g(x)\)</span>이다.</p></li>
+</ol>
+<p>또한, <span class="math inline">\(g(x) \neq 0\)</span>인 모든 <span class="math inline">\(x \in X _ {1} \cap X _ {2}\)</span>에 대하여</p>
+<ol start="4" type="1">
+<li>$()(x)= &nbsp;$이다.</li>
+</ol>
+</div>
+<div class="exa">
+<p><strong> 예제 2</strong><br> 함수 <span class="math inline">\(f(x) = x-2\)</span>와 <span class="math inline">\(g(x)= \sqrt { x-3}\)</span>에 대하여 <span class="math inline">\(f+g\)</span>, <span class="math inline">\(f g\)</span>, <span class="math inline">\(\dfrac{ f}{ g}\)</span>를 구하여라.</p>
+</div>
+<p><b>풀이) </b></p>
+<p>함수의 연산 정의 1.3의 (1),(3),(4)를 이용하면</p>
+<p><span class="math inline">\(\qquad (f+g) (x)=f(x)+g(x)=(x-2)+ \sqrt { x-3}\)</span>(단, <span class="math inline">\(x \geq 3\)</span>)이고</p>
+<p><span class="math inline">\(\qquad (f g )(x)=f(x) g(x)= (x-2) \sqrt { x-3}\)</span> (단, <span class="math inline">\(x \geq 3\)</span>)이며</p>
+<p><span class="math inline">\(\qquad \left (\dfrac{ f}{g }\right )(x)= \dfrac{ f(x)}{g(x) }= \dfrac{ x-2}{ \sqrt { x-3} }\)</span> (단, <span class="math inline">\(x &gt; 3\)</span>)이다.</p>
+<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(floor(<span class="fl">.99</span>),floor(<span class="fl">1.</span>),floor(<span class="fl">1.1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>0 1 1</code></pre>
+</div>
+</div>
+</section>
+<section id="구간으로-정의된-함수" class="level3" data-number="1.1.6">
+<h3 data-number="1.1.6" class="anchored" data-anchor-id="구간으로-정의된-함수"><span class="header-section-number">1.1.6</span> 1.1.6 구간으로 정의된 함수</h3>
+<p>다음과 같이 정의된 함수 <span class="math inline">\(f(x)\)</span>를 간단히 하여 보자.</p>
+<p><span class="math display">\[
+f(x)=\lim_{n \to \infty} \frac{x^{2n+1}+ax+b}{1+x^{2n}}
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(|x|&lt;1\)</span>이면 <span class="math inline">\(f(x)=ax+b\)</span>,</p></li>
+<li><p><span class="math inline">\(x=1\)</span>이면 <span class="math inline">\(\displaystyle f(1)=\frac{1+a+b}{2},\)</span></p></li>
+<li><p><span class="math inline">\(x=-1\)</span>이면 <span class="math inline">\(\displaystyle f(1)=\frac{-1-a+b}{2},\)</span></p></li>
+<li><p><span class="math inline">\(|x|&gt;1\)</span>이면</p>
+<p><span class="math display">\[
+f(x)=\lim_{n \to \infty}
+\frac{x+\frac{a}{x^{xn-1}}+\frac{b}{x^{2n}}}
+      {1+\frac{1}{x^{2n}}}
+=x.
+\]</span></p></li>
+</ul>
+<p>이 때 이를 간단하게</p>
+<p><span class="math display">\[
+f(x)=\left\{
+\begin{array}{ll}
+  ax+b, &amp; \text{if $|x|&lt;1$;} \\
+  \frac{1+a+b}{2}, &amp; \text{if $x=1$;} \\
+  \frac{-1-a+b}{2}, &amp; \text{if $x=-1$;} \\
+  x, &amp; \text{if $|x|&gt;1$.}
+\end{array}
+\right.
+\]</span></p>
+<p>로 표기하고 이런함수를 <b>구간으로 정의된 함수(piecewise defined function)</b>라한다.</p>
+<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-code_folding="[3]">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>reset()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>x,a,b<span class="op">=</span>var(<span class="st">'x,a,b'</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> piecewise([[(<span class="op">-</span>oo, <span class="op">-</span><span class="dv">1</span>), x], [[<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>], (a<span class="op">+</span>b<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span><span class="dv">2</span>], [(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>), a<span class="op">*</span>x<span class="op">+</span>b],[[<span class="dv">1</span>,<span class="dv">1</span>],(a<span class="op">+</span>b<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span><span class="dv">2</span>],[(<span class="dv">1</span>,oo),x]])</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    n<span class="op">=</span>var(<span class="st">'n'</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    fn<span class="op">=</span>(x<span class="op">^</span>(<span class="dv">2</span><span class="op">*</span>n<span class="op">+</span><span class="dv">1</span>)<span class="op">+</span> a<span class="op">*</span>x<span class="op">+</span>b)<span class="op">/</span>(x<span class="op">^</span>(<span class="dv">2</span><span class="op">*</span>n) <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> limit(fn, n<span class="op">=</span>infinity)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>show(f(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>),<span class="st">" = "</span>,g(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>))</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>show(f(<span class="dv">2</span>),<span class="st">" = "</span>,g(<span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\frac{1}{2}  a + b \phantom{\verb!x!}\verb|=| \frac{1}{2}  a + b</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}2 \phantom{\verb!x!}\verb|=| 2</script>
+</div>
+</div>
+<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>f1(x) <span class="op">=</span> <span class="op">-</span>x</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>f2(x) <span class="op">=</span> x<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>f3(x) <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> piecewise([[(<span class="op">-</span><span class="dv">5</span>, <span class="dv">0</span>), f1], [(<span class="dv">0</span>, <span class="dv">2</span>), f2], [(<span class="dv">2</span>, <span class="dv">5</span>), f3]])</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>plot(f,(x,<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="합성함수" class="level3" data-number="1.1.7">
+<h3 data-number="1.1.7" class="anchored"><span class="header-section-number">1.1.7</span> 1.1.7 합성함수</h3>
+새로운 함수를 얻기 위해 두 개의 함수를 결합하는 또 다른 방법이 있는데 그것이 바로 합성이다.
+<div class="defn">
+<p><strong> 정의. </strong> <br></p>
+<p>함수 <span class="math inline">\(f\)</span>와 <span class="math inline">\(g\)</span>의 정의역이 각각 <span class="math inline">\(X _ {1,} ~X _ {2} \subset X ~\)</span>라고 할 때 <span class="math inline">\(x \in X _ {2}\)</span>, <span class="math inline">\(g(x) \in X _ {1}\)</span>에 대하여</p>
+<p><span class="math inline">\((f \circ g)(x)=f(g(x))\)</span>인 함수를 합성함수 <span class="math inline">\(f \circ g\)</span>라 한다.</p>
+</div>
+<figure class="figure">
+<center>
+<img src="./images/함성함수.PNG" width="70%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+합성함수 <span class="math inline">\(f \circ g\)</span>
+</figcaption>
+</center>
+</figure>
+<div class="exa">
+<p><strong>예제 </strong><br></p>
+<p>함수 <span class="math inline">\(f(x) =x ^ {2} +3\)</span>이고 <span class="math inline">\(g(x)= \sqrt { x-4}\)</span>일 때 합성함수 <span class="math inline">\(f \circ g\)</span>와 <span class="math inline">\(g \circ f\)</span>를 구하여라.</p>
+</div>
+<p><b>(풀이)</b><br></p>
+<p>합성함수 정의를 이용하여 두 합성함수를 구해보면</p>
+<p><span class="math inline">\((f \circ g) (x) =f(g(x))=f( \sqrt { x-4})= (\sqrt { x-4}) ^ {2} +3=x-1\)</span>(단, <span class="math inline">\(x \geq 4\)</span>)이고</p>
+<p><span class="math inline">\((g \circ f)(x)=g(f(x))=g(x ^ {2} +3 )= \sqrt { x ^ {2} -1}\)</span>(단, <span class="math inline">\(|x| \geq 1\)</span>)임을 알 수 있다.■</p>
+<p>위의 예제에서 알 수 있듯이 합성함수는 교환법칙이 성립하지 않는다.</p>
+<div class="exa">
+<p><strong>예제 </strong><br></p>
+
+<p>해안선과 평행하게 <span class="math inline">10  <em>k</em><em>m</em>/<em>h</em></span>의 속도로 움직이는 배가 있다. 이 배는 해안으로부터 <span class="math inline">2  <em>k</em><em>m</em></span> 떨어져 있고 정오에 등대를 지나갔다. 배가 정오에서부터 이동한 거리 <span class="math inline"><em>s</em></span>에 대한 배와 등대 사이 거리 <span class="math inline"><em>d</em> = <em>f</em>(<em>s</em>)</span> 함수를 구하고, 정오로부터 시간 <span class="math inline"><em>t</em></span>에 대한 <span class="math inline"><em>s</em></span>의 함수 <span class="math inline"><em>s</em> = <em>g</em>(<em>t</em>)</span>를 구한 후 <span class="math inline"><em>f</em> ∘ <em>g</em></span> 함수의 의미를 말하여라.</p>
+</div>
+<p><b>(풀이)</b></p>
+<p>
+<span class="math inline"><span class="math inline">\(d^{ 2} = s^{2} + 2^{2} = s^{2} +
+4 \Leftrightarrow  d = f(s) = \sqrt{s^{2} +
+4}\)</span></span>이고 <span class="math inline"><em>s</em> = <em>g</em>(<em>t</em>) = 10<em>t</em></span>이다.
+</p>
+<p>
+또 <span class="math inline"><span class="math inline">\((f \circ g)(t) = f(g(t)) = \sqrt{100
+t^{ 2} + 4}\)</span></span>이다.
+</p>
+<p>
+<span class="math inline"><em>f</em> ∘ <em>g</em></span> 함수의 의미는 배와 등대 사이 거리를 시간에 관한 함수로 표현한 것이다. ■
+</p>
+<section id="연습문제" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="연습문제"><span class="header-section-number">1.2</span> ### 1.1 연습문제</h2>
+<p>01. 두 함수 <span class="math inline">\(f(x) = 1\)</span>, <span class="math inline">\(g(x) = 1 + \sqrt{x}\)</span>에 대하여 <span class="math inline">\(f + g\)</span>, <span class="math inline">\(fg\)</span>, <span class="math inline">\(\frac{f}{g}\)</span>를 구하고, 각 함수의 정의역을 구하여라.</p>
+<p>02. 두 함수 <span class="math inline">\(f(x) = \sqrt{x^{2} - 1}\)</span>, <span class="math inline">\(g(x) = \sqrt{x^{2} - 2}\)</span>에 대하여 <span class="math inline">\(f + g\)</span>, <span class="math inline">\(fg\)</span>, <span class="math inline">\(\frac{f}{g}\)</span>를 구하고, 각 함수의 정의역을 구하여라.</p>
+<p>03. 함수 <span class="math inline">\(f(x) = \sqrt{x + 1}\)</span>, <span class="math inline">\(g(x) = \frac{1}{x}\)</span>의 합성함수 <span class="math inline">\(f \circ g\)</span>와 <span class="math inline">\(g \circ f\)</span>를 구하고, 각 함수의 정의역을 구하여라.</p>
+<p>04. 함수 <span class="math inline">\(f(x) = x^{5}\)</span>, <span class="math inline">\(g(x) = \sqrt{x - 5}\)</span>의 합성함수 <span class="math inline">\(f \circ g\)</span>와 <span class="math inline">\(g \circ f\)</span>를 구하고, 각 함수의 정의역을 구하여라.</p>
+<p>05. 함수 <span class="math inline">\(f(x) = x^{2} + 1\)</span>, <span class="math inline">\(g(x) = cosx\)</span>의 합성함수 <span class="math inline">\(f \circ g\)</span>와 <span class="math inline">\(g \circ f\)</span>를 구하고, 각 함수의 정의역을 구하여라.</p>
+<p>06. 함수 <span class="math inline">\(F(x) = \cos^{5}x\)</span>를 두 함수의 합성함수 형태로 표현하여라.</p>
+<p>07. 함수 <span class="math inline">\(F(x) = (x^{3} + 2x - 1)^{7}\)</span>을 두 함수의 합성함수 형태로 표현하여라.</p>
+<p>08. 함수 <span class="math inline">\(F(x) = \sqrt{\mid x^{3} - 1 \mid + 3}\)</span>을 두 함수의 합성함수 형태로 표현하여라.</p>
+<p>09. 함수 <span class="math inline">\(F(x) = \frac{\sqrt[4]{x}}{1 + \sqrt[4]{x}}\)</span>를 두 함수의 합성함수 형태로 표현하여라.</p>
+<p>10. 함수 <span class="math inline">\(F(x) = \sec(x^{2})\tan(x^{2})\)</span>을 두 함수의 합성함수 형태로 표현하여라.</p>
+<p>11. 두 함수 <span class="math inline">\(f(x) = m_{1}x + b_{1}\)</span>, <span class="math inline">\(g(x) = m_{2}x + b_{2}\)</span>가 있다. <span class="math inline">\(g \circ f\)</span>함수의<span class="math inline">\(y\)</span> 절편을 구하여라.</p>
+<p>12. 함수 <span class="math inline">\(g(x) = 3x + 2\)</span>, <span class="math inline">\(h(x) = 9x^{2} + 6x +  1\)</span>이고 <span class="math inline">\(f \circ g = h\)</span>를 만족하는 함수 <span class="math inline">\(f\)</span>를 구하여라.</p>
+<p>13. 함수 <span class="math inline">\(g(x) = 2x + 2\)</span>, <span class="math inline">\(h(x) = 4x^{2} + 8x +  12\)</span>, <span class="math inline">\(g \circ f = h\)</span>를 만족하는 함수 <span class="math inline">\(f\)</span>를 구하여라.</p>
+<p>14. 함수 <span class="math inline">\(f\)</span>가 우함수이고 <span class="math inline">\(F(x) = (g \circ f)(x)\)</span>일 때 <span class="math inline">\(F\)</span>는 우함수인지 기함수인지를 판단하여라.</p>
+<p>15. 해비사이드 함수Heaviside function <span class="math inline">\(H\)</span>는 <span class="math inline">\(H(t) = \left\{ \begin{matrix} 0 &amp; ,\ t\langle 0 \\ 1 &amp; ,\ t \geq 0 \\ \end{matrix} \right.\ \)</span>과 같이 정의된다. <span class="math inline">\(t = 3\)</span>초일 때 스위치를 켰고 그 순간 허용전압 <span class="math inline">\(V(t)\)</span>가 <span class="math inline">\(360\)</span>볼트가 되었다. 이때 <span class="math inline">\(V(t)\)</span>를 <span class="math inline">\(H(t)\)</span>로 나타내어라.</p>
+</section>
+<section id="초월함수" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="초월함수"><span class="header-section-number">1.3</span> 1.2 초월함수</h2>
+<p>이 절에서는 미분적분학에서 많이 다루어지는 초월함수에 대해 살펴보자. 주기함수인 삼각함수는 전자파나 파동과 같은 현상에서 자주 나타나는 함수이고 박테리아의 증식과 같은 현상은 지수함수와 관련 있다. 이와 같은 초월함수의 정의와 성질들은 고등학교 과정에서 많은 부분 학습되어 있을 것이다. 이 절에서는 초월함수의 기본 정의와 성질을 바탕으로 하여 삼각함수, 지수함수와 로그함수 정의와 성질, 그래프 등을 간단히 살펴보고 실생활에서 활용되는 다양한 예를 소개한다. 여기서 소개하는 실생활 활용은 전문적인 분야를 깊이 있게 분석하기 보다는 여러 함수들이 다양한 분야에 적용된다는 정도만 알면 된다.</p>
+<section id="대수함수" class="level4" data-number="1.3.0.1">
+<h4 data-number="1.3.0.1" class="anchored" data-anchor-id="대수함수"><span class="header-section-number">1.3.0.1</span> 대수함수</h4>
+<p>대수함수(algebraic function)는 다항방정식의 근이 되는 함수로서 흔히 덧셈, 뺄셈, 곱셈, 나눗셈, 제곱근 연산과 같은 대수적 연산을 이용하여 만들어질 수 있는 함수이다. #### 초월함수 대수함수가 아닌 해석함수를 <strong>초월함수</strong>라고 하며 이는 대수적 연산을 “초월한다.”는 뜻에서 붙여진 이름이다. 삼각함수, 지수함수, 로그함수 등이 대표적인 초월함수이다.</p>
+</section>
+<section id="대수함수-1" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="대수함수-1"><span class="header-section-number">1.3.1</span> 1.2.1 대수함수</h3>
+<p>함수 <span class="math inline">\(y= y(x)\)</span>가 <strong>대수함수</strong>라는 것은 변수 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>가 대수적으로 종속이라는 뜻이다. 즉, 영이 아닌 다항식 <span class="math inline">\(P(x, \ y)\)</span>에 대하여</p>
+<p><span class="math display">\[ P(x,y(x)) = 0\]</span></p>
+<p>이라는 뜻이다. 이때 다항식 <span class="math inline">\(P\)</span>를 <span class="math inline">\(y\)</span>에 대한 내림차순으로 정리하면 다항식 <span class="math inline">\(p_0(x), p_1(x),  \dots, p_n(x)\)</span>에 대하여</p>
+<p><span class="math display">\[p_n(x) y^n + p_{n-1}(x) y^{n-1} + \cdots + p_0(x)=0\]</span></p>
+<p>과 같이 쓸 수 있다. 사용하는 수의 체계에 따라 다항식의 계수들을 한정할 수 있는데, 보통 유리수체를 사용한다.</p>
+<p>대수함수는 다항식을 가지고 시작하여 유한번의 덧셈, 뺄셈, 곱셈, 나눗셈, 제곱근 연산으로 얻어지는 함수를 모두 포함한다. 예를 들어, 다음 함수들은 모두 대수함수이다. <a href="#">1)</a><a href="#">2)</a></p>
+<p><span class="math display">\[\begin{align}
+f(x)&amp;= x^5-x^3+2\\ f(x)&amp;= \sqrt{x^3-1}\\ f(x)&amp;= \frac{x^3+x-1}{3\sqrt{x}+x}\\ f(x)&amp;= x+(x^2+1)^{\frac{3}{4}}
+\end{align}
+\]</span></p>
+<p>하지만 유한번의 대수적 연산에 의해 만들어질 수 없는 대수함수들도 존재한다.</p>
+</section>
+<section id="초월함수-1" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="초월함수-1"><span class="header-section-number">1.3.2</span> 1.2.2 초월함수</h3>
+<p>해석함수 중에서 대수함수가 아닌 함수를 초월함수라고 한다. 따라서 초월함수는 유한번의 대수적 연산(덧셈, 뺄셈, 곱셈, 나눗셈, 제곱근 연산)에 의해 만들어질 수 없는 함수이다.</p>
+<p>대표적인 초월함수로는 <code>지수함수, 로그함수, 삼각함수</code> 등이 있다. 예를 들어, 다음 함수는 모두 초월함수이다. <a href="#">2)</a></p>
+<p><span class="math display">\[5^x, \quad x^e \quad x^x, \quad \log_{10} x, \quad \tan x\]</span></p>
+<p><strong>(주의)</strong> 초월함수들의 합성함수가 대수함수가 될 수도 있다.</p>
+</section>
+<section id="삼각함수trigonometric-functions" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="삼각함수trigonometric-functions"><span class="header-section-number">1.3.3</span> 1.2.3 삼각함수(Trigonometric Functions)</h3>
+<p>우리가 일상생활에서 많이 접하는 것 중의 하나가 파동이다. 예를 들어 라디오 방속 국에서 음악을 전자파 형태로 보내면 라디오 수신기가 이 전자파를 해독해서 스피커 안에 있는 얇은 막을 진동시킨다. 이 진동이 공기 속에서 압력파를 만들어 우리 귀에 전해지면 우리는 라디오를 듣게 되는 것이다. 이 파동은 주기적이다. 즉, 같은 형태의 파동이 계속 되풀이된다. 이와 같은 현상을 수학적으로는 주기함수로 나타낼 수 있다. 주기함수중에서 가장 잘 알려진 것이 삼각함수이다.</p>
+<div class="defn">
+<p><strong> 정의. </strong> <br></p>
+<p>함수 <span class="math inline">\(f\)</span>의 정의역에 속하는 모든 <span class="math inline">\(x\)</span>와 <span class="math inline">\(x+T\)</span>에 대해서, <span class="math display">\[ f(x+T)=f(x)\]</span> 이면, 함수 <span class="math inline">\(f\)</span>를 주기가 <span class="math inline">\(T\)</span>인 주기함수라고 한다. 위 식을 만족하는 가장 작은 수 <span class="math inline">\(T&gt;0\)</span>를 <b>기본주기</b>라고 한다.</p>
+</div>
+</section>
+<section id="삼각함수의-기하학적-정의" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="삼각함수의-기하학적-정의"><span class="header-section-number">1.3.4</span> 1.2.4 삼각함수의 기하학적 정의</h3>
+<p>각 <span class="math inline">\(C\)</span>가 직각인 삼각형 <span class="math inline">\(ABC\)</span>에서, 각 <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>의 대변(마주보는 변)의 길이를 <span class="math inline">\(a,~b,~h\)</span>라고 할 때, 사인(sine), 코사인(cosine), 탄젠트(tangent), 코시컨트(cosecant), 시컨트(secant), 코탄젠트(cotangent)의 정의는 다음과 같다.</p>
+<figure class="figure">
+<center>
+<img src="./images/삼각함수기.PNG" width="70%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+삼각함수의 기하학적 길이
+</figcaption>
+</center>
+</figure>
+<div id="cell-30" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>reset()<span class="op">;</span> load(<span class="st">'ch1.sage'</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>f(x)<span class="op">=</span>sin(x)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>삼각함수그래프(f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-31" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:48:07.897906Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:48:07.404664Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>f.plot(<span class="op">-</span>pi<span class="op">*</span><span class="dv">2</span>,pi<span class="op">*</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-32" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>f(x)<span class="op">=</span>cos(x)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>삼각함수그래프(f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-33" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>f(x)<span class="op">=</span>tan(x)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>삼각함수그래프(f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-34" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>f(x)<span class="op">=</span>sec(x)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>삼각함수그래프(f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-35" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:48:20.434328Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:48:19.747548Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>f(x)<span class="op">=</span>cot(x)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>삼각함수그래프(f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-36" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:48:23.961609Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:48:23.408420Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>f(x)<span class="op">=</span>sin(x)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>f.plot(<span class="op">-</span><span class="dv">6</span>,<span class="dv">6</span>,ymin<span class="op">=-</span><span class="dv">3</span>,ymax<span class="op">=</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="삼각함수의-실생활-활용" class="level3" data-number="1.3.5">
+<h3 data-number="1.3.5" class="anchored" data-anchor-id="삼각함수의-실생활-활용"><span class="header-section-number">1.3.5</span> 1.2.5 삼각함수의 실생활 활용</h3>
+<figure class="figure">
+<center>
+<img src="./images/1장_함수ImA1.png" width="100%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+</figcaption>
+</center>
+</figure>
+<figure class="figure">
+<center>
+<img src="./images/1장_함수ImA2.png" width="100%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+</figcaption>
+</center>
+</figure>
+</section>
+<section id="삼각항등식" class="level3" data-number="1.3.6">
+<h3 data-number="1.3.6" class="anchored" data-anchor-id="삼각항등식"><span class="header-section-number">1.3.6</span> 삼각항등식</h3>
+<p>삼각항등식(trigonometric identity)은 삼각함수에 관한 방정식으로서 양변이 모든 각에 대해 항상 성립하는 <a href="https://terms.naver.com/entry.naver?docId=3405409&amp;ref=y">항등식</a>을 뜻한다. 가장 대표적인 삼각항등식은 <a href="https://terms.naver.com/entry.naver?docId=3338217&amp;ref=y">피타고라스 정리</a>를 응용한 것인데, 위의 그림 2에서 피타고라스 정리를 응용하면 다음을 얻는다.</p>
+<p><span class="math display">\[x^2+y^2=r^2\]</span></p>
+<p>이 식의 양변을 <span class="math inline">\(r^2\)</span>으로 나누면 사인과 코사인의 정의를 이용하여 다음을 얻게 된다.</p>
+<p><span class="math display">\[\begin{align} \sin^2 \theta + \cos^2 \theta =1 \qquad (1)\end{align}\]</span></p>
+<p>다시 이 식을 각각 <span class="math inline">\(\cos^2 \theta, \ \sin^2 \theta\)</span>로 나누면 다음을 얻는다.</p>
+<p><span class="math display">\[\begin{align} \tan^2 \theta +1 =\sec^2 \theta, \ \ \ \ 1+ \cot^2 \theta = \csc^2 \theta \qquad (2)\end{align}\]</span></p>
+</section>
+<section id="삼각함수의-보각공식" class="level3" data-number="1.3.7">
+<h3 data-number="1.3.7" class="anchored" data-anchor-id="삼각함수의-보각공식"><span class="header-section-number">1.3.7</span> 삼각함수의 보각공식</h3>
+<p>한편, 점 <span class="math inline">\((x, \ y)\)</span>가 단위원 위의 점이면, <span class="math inline">\((-x, \ y)\)</span>, <span class="math inline">\((-x, \ -y)\)</span>, <span class="math inline">\((x, \ -y)\)</span>도 단위원 위의 점이다. 이 네 점은 각 변이 좌표축과 평행한 직사각형의 네 꼭짓점이다. 특히, 이 꼭짓점의 <span class="math inline">\(x\)</span>좌표와 <span class="math inline">\(y\)</span>좌표는 그 대응하는 각의 코사인과 사인이다. 따라서 다음 등식을 얻게 된다. <code>올싸탄코</code></p>
+<p><span class="math display">\[\begin{align} \sin (\pi-\theta)&amp;=\sin \theta,\ \ \sin (\pi+\theta)=-\sin \theta,\ \ \sin (-\theta)=-\sin \theta\\
+\cos (\pi-\theta)&amp;=-\cos \theta,\ \ \cos (\pi+\theta)=-\cos \theta,\ \ \cos (-\theta)=\cos \theta\\
+\tan (\pi-\theta)&amp;=-\tan \theta,\ \ \tan (\pi+\theta)=\tan \theta,\ \ \tan (-\theta)=-\tan \theta \end{align}\]</span></p>
+<p>보각관계란 두 각을 합쳐서 <span class="math inline">\(\pi\)</span>가 되는 관계를 의미한다.</p>
+</section>
+<section id="삼각함수의-여각공식" class="level3" data-number="1.3.8">
+<h3 data-number="1.3.8" class="anchored" data-anchor-id="삼각함수의-여각공식"><span class="header-section-number">1.3.8</span> 삼각함수의 여각공식</h3>
+<p>여각관계란 두 각의 합이 <span class="math inline">\(\dfrac{\pi}{2}\)</span>가 되는 관계를 의미한다. 예를 들어<span class="math inline">\(\dfrac{\pi}{6}\)</span>의 여각은 <span class="math inline">\(\dfrac{2\pi}{6}\)</span>이고, <span class="math inline">\(\dfrac{4\pi}{6}\)</span>의 여각은 <span class="math inline">\(\dfrac{-\pi}{6}\)</span>이다. 임의의 각 <span class="math inline">\(\theta\)</span>에 대하여도</p>
+<p><span class="math display">\[
+\sin(\theta)=\cos\left(\dfrac{\pi}{2}-\theta\right),~~~~\cos(\theta)=\sin\left(\dfrac{\pi}{2}-\theta\right)
+\]</span></p>
+<p>가 항상 성립한다.</p>
+</section>
+</section>
+<section id="지수함수와-로그함수" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="지수함수와-로그함수"><span class="header-section-number">1.4</span> 지수함수와 로그함수</h2>
+<section id="지수함수" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="지수함수"><span class="header-section-number">1.4.1</span> 지수함수</h3>
+<p><a href="https://terms.naver.com/entry.naver?docId=3338306&amp;ref=y">지수함수</a>란 밑과 지수의 거듭제곱 꼴의 함수로, <span class="math inline">\(1\)</span>이 아닌 양수 <span class="math inline">\(a\)</span>에 대하여 <span class="math display">\[f(x)=a^x\]</span>꼴로 나타나는 함수를<span class="math inline">\(a\)</span>를 <a href="https://terms.naver.com/entry.naver?docId=3338340&amp;ref=y">밑</a>으로 하는 <a href="https://terms.naver.com/entry.naver?docId=3338306&amp;ref=y">지수함수</a>라고 한다.</p>
+<div class="defn">
+<p><strong> 정의. </strong> <br></p>
+<p><span class="math inline">\(1\)</span>이 아닌 양수 <span class="math inline">\(a\)</span>와 임의의 실수 <span class="math inline">\(x\)</span>에 대하여 <span class="math display">\[f(x)=a^x\]</span> 꼴로 나타나는 함수를 <span class="math inline">\(a\)</span>를 <b>밑</b>으로 하는 <b>지수함수</b>라고 한다.</p>
+<p>특히, 밑 <span class="math inline">\(a\)</span>의 값이 <span class="math inline">\(e \approx 2.7182818\cdots\)</span>인 지수함수 <span class="math inline">\(f(x) = e^{x}\)</span>을 <b>자연지수함수</b>라 한다.</p>
+</div>
+<section id="지수함수의-실생활-활용" class="level4" data-number="1.4.1.1">
+<h4 data-number="1.4.1.1" class="anchored" data-anchor-id="지수함수의-실생활-활용"><span class="header-section-number">1.4.1.1</span> 지수함수의 실생활 활용</h4>
+<section id="세포-분열-박테리아-증식" class="level5" data-number="1.4.1.1.1">
+<h5 data-number="1.4.1.1.1" class="anchored" data-anchor-id="세포-분열-박테리아-증식"><span class="header-section-number">1.4.1.1.1</span> ￭ 세포 분열, 박테리아 증식</h5>
+<p>하나의 세포가 분열을 시작하면 기하급수적으로 증가한다. 따라서 시간 <span class="math inline">\(x\)</span>에 대한 하나의 세포가 분열했을 때 세포의 수는 <span class="math inline">\(y = 2^{x}\)</span>이라는 지수함수로 분석할 수 있다.</p>
+</section>
+<section id="현의-길이" class="level5" data-number="1.4.1.1.2">
+<h5 data-number="1.4.1.1.2" class="anchored" data-anchor-id="현의-길이"><span class="header-section-number">1.4.1.1.2</span> ￭ 현의 길이</h5>
+<p>한 옥타브 높은 음은 길이가 절반으로 줄어든다. 현의 길이는 건반 하나하나마다 일정한 비율로 12분의 1씩 줄어든다. 낮은 도에서 높은 도까지 총 13개의 건반 음에 대응하는 현의 길이는 바흐가 처음으로 작품에 적용한 평균율을 따른다. 이를 일반화하면, <span class="math inline">\(x\)</span>개의 건반만큼 음이 올라가면 <span class="math inline">\(y = (\frac{1}{2})^{\frac{x}{12}}\)</span>의 식이 성립한다.</p>
+</section>
+<section id="탄소-연대-측정" class="level5" data-number="1.4.1.1.3">
+<h5 data-number="1.4.1.1.3" class="anchored" data-anchor-id="탄소-연대-측정"><span class="header-section-number">1.4.1.1.3</span> ￭ 탄소 연대 측정</h5>
+<p>방사성 붕괴는 불안정한 원자핵이 이온화와 방사선 방출을 통해 에너지를 잃고 안정된 상태로 가는 과정이다. 이때 방사능 물질은 지수적으로 붕괴한다. 탄소&nbsp;연대&nbsp;측정법은&nbsp;고고학&nbsp;유물의&nbsp;연대를&nbsp;추정하는 데&nbsp;많이&nbsp;사용되는 방법으로 대기&nbsp;중에&nbsp;포함된&nbsp;탄소-14의&nbsp;비율은&nbsp;일정하고,&nbsp;식물은&nbsp;광합성,&nbsp;동물은&nbsp;호흡을&nbsp;통해서&nbsp;대기&nbsp;중의&nbsp;탄소를&nbsp;주고&nbsp;받기 때문에 살아&nbsp;있는&nbsp;동식물이&nbsp;가지고&nbsp;있는&nbsp;탄소-14의&nbsp;비율은&nbsp;대기&nbsp;중의&nbsp;탄소-14의&nbsp;비율과&nbsp;일치한다.&nbsp;동식물이&nbsp;죽은&nbsp;후&nbsp;외부와&nbsp;격리된&nbsp;상태에서는&nbsp;탄소&nbsp;동위원소 중&nbsp;탄소-14만이&nbsp;방사성&nbsp;붕괴를&nbsp;통해&nbsp;시간에&nbsp;따라&nbsp;감소하므로 방사성&nbsp;동위원소&nbsp;탄소-14의 비율을&nbsp;측정함으로써&nbsp;유물의 경과시간을&nbsp;추정할&nbsp;수&nbsp;있다.</p>
+<p><span class="math inline">\(\qquad\qquad  N(t) = N_{0}(\frac{1}{2})^{\frac{t}{t_{1/2}}}\)</span>, <span class="math inline">\(N(t) = N_{0}e^{- \frac{t}{\tau}}\)</span>, <span class="math inline">\(N(t) = N_{0}e^{- \lambda t}\)</span></p>
+<p>• <span class="math inline">\(N_{0}\)</span> : 붕괴를 거칠 물질의 초깃값</p>
+<p>• <span class="math inline">\(N(t)\)</span>: 시간<span class="math inline">\(t\)</span> 경과 후 붕괴되지 않고 남아있는 물질의 양</p>
+<p>• <span class="math inline">\(t_{1/2}\)</span> : 붕괴 중인 양의 반감기</p>
+<p>• <span class="math inline">\(\tau\)</span> : 붕괴 중인 물질의 평균 수명시간</p>
+<p>• <span class="math inline">\(\lambda\)</span> : 붕괴 중인 물질의 붕괴 상수</p>
+</section>
+</section>
+<section id="지수함수의-그래프" class="level4" data-number="1.4.1.2">
+<h4 data-number="1.4.1.2" class="anchored" data-anchor-id="지수함수의-그래프"><span class="header-section-number">1.4.1.2</span> 지수함수의 그래프</h4>
+<ol type="1">
+<li><span class="math inline">\(0 &lt; a &lt; 1\)</span>인 경우</li>
+</ol>
+<p><span class="math inline">\(x\)</span>의 값이 증가하면 <span class="math inline">\(a^x\)</span>의 값은 감소하며, 지수함수 <span class="math inline">\(y=a^x\)</span>의 그래프는 다음 그림과 같다.</p>
+<figure class="figure">
+<center>
+<img src="./images/지수함수1.jpg" width="30%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+</figcaption>
+</center>
+</figure>
+<div id="cell-45" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:48:46.884563Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:48:45.377247Z&quot;}}" data-code_folding="[0]">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>reset()<span class="op">;</span> load(<span class="st">'ch1.sage'</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>A<span class="op">=</span>[<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">8</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">16</span>]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>logPlot(A)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li><span class="math inline">\(a &gt; 1\)</span>인 경우</li>
+</ol>
+<p><span class="math inline">\(x\)</span>의 값이 증가하면 <span class="math inline">\(a^x\)</span>의 값은 증가하며 이때 지수함수 <span class="math inline">\(y=a^x\)</span>의 그래프는 다음 그림과 같다.</p>
+<figure class="figure">
+<center>
+<img src="./images/지수함수2.jpg" width="30%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+</figcaption>
+</center>
+</figure>
+<div id="cell-47" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:49:05.355176Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:49:03.916050Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>A<span class="op">=</span>[<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">16</span>]</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>logPlot(A)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="지수함수의-성질-및-특징" class="level4" data-number="1.4.1.3">
+<h4 data-number="1.4.1.3" class="anchored" data-anchor-id="지수함수의-성질-및-특징"><span class="header-section-number">1.4.1.3</span> 지수함수의 성질 및 특징</h4>
+<p><span class="math inline">\(a &gt; 0\)</span>이고, <span class="math inline">\(a \ne 1\)</span>일 때, 지수함수 <span class="math inline">\(f(x)=a^x\)</span>는 실수 전체의 집합 <span class="math inline">\(\mathbb R\)</span>에서 정의된 연속함수로 치역은 양의 실수 전체의 집합이다.</p>
+<p>지수함수 <span class="math inline">\(f(x)=a^x\)</span>에서 <span class="math inline">\(a=1\)</span>이면 <span class="math inline">\(f(x)\)</span>는 항등적으로 <span class="math inline">\(1\)</span>인 상수함수이므로, 지수함수에서는 <span class="math inline">\(a \ne 1\)</span>이라고 가정한다.</p>
+<p><span class="math inline">\(a\)</span>가 1이 아닌 양수일 때, 지수함수 <span class="math inline">\(y=a^x\)</span>에 대해 다음이 성립한다.</p>
+<ol style="list-style-type: none;">
+<li>
+<ol type="1">
+<li>정의역은 실수 전체의 집합이고, 치역은 양의 실수 전체의 집합이다.
+</li>
+<li>
+<ol start="2" type="1">
+<li><span class="math inline">\(0 &lt; a &lt; 1\)</span>일 때 <span class="math inline">\(y\)</span>는 감소함수이고, <span class="math inline">\(a &gt; 1\)</span>이면 <span class="math inline">\(y\)</span>는 증가함수다.
+</li>
+<li>
+<ol start="3" type="1">
+<li>그래프는 점 <span class="math inline">\((0, \ 1)\)</span>을 지나고, <span class="math inline">\(x\)</span>축을 <a>점근선</a> 으로 한다.
+</li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+<p>또, 지수함수는 다음의 지수법칙을 만족한다.</p>
+<p><span class="math inline">\(1\)</span>이 아닌 두 양수 <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>에 대하여</p>
+<ol style="list-style-type: none;">
+<li>
+<ol type="1">
+<li><span class="math inline">\(a^{x+y} = a^x \cdot a^y\)</span><br>
+
+</li>
+<li>
+<ol start="2" type="1">
+<li><span class="math inline">\(a^{x-y} = \frac{a^x}{a^y}\)</span>
+</li>
+<li>
+<ol start="3" type="1">
+<li><span class="math inline">\((a^x)^y = a^{xy}\)</span>
+</li>
+<li>
+<ol start="4" type="1">
+<li><span class="math inline">\((ab)^x = a^x \cdot b^x\)</span>
+</li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+<p>한편 지수함수에 대해 다음 정리가 성립한다.</p>
+<div class="thm">
+<p><strong> 정리. </strong> <br></p>
+<p>함수 <span class="math inline">\(f: \mathbb R \to \mathbb R\)</span>가 다음의 세 조건을 만족하면 <span class="math inline">\(f(x)\)</span>는 지수함수이다.</p>
+<ol type="1">
+<li>임의의 실수 <span class="math inline">\(x_1, \ x_2\)</span>에 대하여 <span class="math inline">\(f(x_1 + x_2) = f(x_1) f(x_2)\)</span>이다.<br>
+</li>
+<li><span class="math inline">\(f(x)\)</span>는 연속함수이다.</li>
+<li><span class="math inline">\(f(x)\)</span>는 상수함수가 아니다.</li>
+</ol>
+</div>
+</section>
+</section>
+<section id="로그함수" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="로그함수"><span class="header-section-number">1.4.2</span> 로그함수</h3>
+<p><span class="math inline">\(1\)</span>이 아닌 양수 <span class="math inline">\(a\)</span>에 대하여</p>
+<p><span class="math display">\[y=\log_a x\]</span></p>
+<p>꼴로 나타나는 함수를 <span class="math inline">\(a\)</span>를 <a href="https://terms.naver.com/entry.naver?docId=3338340&amp;ref=y">밑</a>으로 하는 <a href="https://terms.naver.com/entry.naver?docId=3338266&amp;ref=y">로그함수</a>라고 한다.</p>
+<p>로그함수는 빛의 속도를 나타내거나, 지구와 다른 행성간의 거리와 같이 큰 수나 또는 미생물의 크기, 나노단위의 세포와 같은 작은 수를 다룰 때 유용하게 이용된다.</p>
+<section id="정의" class="level4" data-number="1.4.2.1">
+<h4 data-number="1.4.2.1" class="anchored" data-anchor-id="정의"><span class="header-section-number">1.4.2.1</span> 정의</h4>
+<p><span class="math inline">\(1\)</span>이 아닌 양수 <span class="math inline">\(a\)</span>에 대하여 지수함수 <span class="math inline">\(y=a^x\)</span>은 실수 전체의 집합에서 양의 실수 전체의 집합으로의 일대일 대응이므로 역함수를 가진다. 이때 <a href="https://terms.naver.com/entry.naver?docId=3338260&amp;ref=y">로그</a>의 정의에 의하여</p>
+<p><span class="math display">\[y=a^x \quad \iff \quad x=\log_a y\]</span> 이다. 지수함수 <span class="math inline">\(y=a^x\)</span>의 역함수는 (<span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>를 바꾸어 쓰면) <span class="math display">\[y = \log_a x
+\]</span> 이다. 이 함수를 <a href="https://terms.naver.com/entry.naver?docId=3338340&amp;ref=y">밑</a>이 <span class="math inline">\(a\)</span>인 <strong>로그함수</strong>라고 한다.</p>
+<p>밑이 <span class="math inline">\(10\)</span>인 로그함수는 <a href="https://terms.naver.com/entry.naver?docId=3338274&amp;ref=y">상용로그</a>함수라 하고, 이때 밑 <span class="math inline">\(10\)</span>은 보통 생략하여 <span class="math inline">\(y=\log x\)</span>와 같이 나타낸다.</p>
+<p>또 밑이 자연상수 <span class="math inline">\(e\)</span>인 로그함수를 <a href="https://terms.naver.com/entry.naver?docId=3338137&amp;ref=y">자연로그</a>함수라 하고, 이것은 <span class="math inline">\(y=\ln x\)</span>와 같이 나타낸다.</p>
+</section>
+<section id="로그함수의-그래프" class="level4" data-number="1.4.2.2">
+<h4 data-number="1.4.2.2" class="anchored" data-anchor-id="로그함수의-그래프"><span class="header-section-number">1.4.2.2</span> 로그함수의 그래프</h4>
+<ol type="1">
+<li><span class="math inline">\(0&lt;a&lt;1\)</span>인 경우</li>
+</ol>
+<p><span class="math inline">\(x\)</span>의 값이 증가하면 <span class="math inline">\(\log_a x\)</span>의 값은 감소하며, <span class="math inline">\(a=\frac{1} {2}\)</span>, <span class="math inline">\(a=\frac{1} {3}\)</span>일 때의 로그함수 <span class="math inline">\(y=\log_a x\)</span>의 그래프는 다음 그림과 같다.</p>
+<figure class="figure">
+<center>
+<img src="./images/로그함수1.jpg" width="30%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+</figcaption>
+</center>
+</figure>
+<p>위의 그림에서 알 수 있듯이 <span class="math inline">\(0&lt;a&lt;1\)</span>일 때, 로그함수 <span class="math inline">\(y=\log_a x\)</span>의 그래프는</p>
+<p><span class="math inline">\(0&lt;x&lt;1\)</span>에서는 <span class="math inline">\(a\)</span>의 값이 작을수록 <span class="math inline">\(y\)</span>축에 가깝고,</p>
+<p><span class="math inline">\(x&gt;1\)</span>에서는 <span class="math inline">\(a\)</span>의 값이 작을수록 <span class="math inline">\(x\)</span>축에 가깝다.</p>
+<div id="cell-53" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:49:17.931298Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:49:16.315296Z&quot;}}" data-code_folding="[0]">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>A<span class="op">=</span>[<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">8</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">16</span>]</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>logPlot(A)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li><span class="math inline">\(a&gt;1\)</span>인 경우</li>
+</ol>
+<p><span class="math inline">\(x\)</span>의 값이 증가하면 <span class="math inline">\(\log_a x\)</span>의 값은 증가하며, <span class="math inline">\(a=2\)</span>, <span class="math inline">\(a=3\)</span>일 때의 로그함수 <span class="math inline">\(y=\log_a x\)</span>의 그래프는 다음 그림과 같다.</p>
+<figure class="figure">
+<center>
+<img src="./images/로그함수2.jpg" width="30%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+</figcaption>
+</center>
+</figure>
+<p>위의 그림에서 알 수 있듯이 <span class="math inline">\(a&gt;1\)</span>일 때, 로그함수 <span class="math inline">\(y=\log_a x\)</span>의 그래프는</p>
+<p><span class="math inline">\(0&lt;x&lt;1\)</span>에서는 <span class="math inline">\(a\)</span>의 값이 클수록 <span class="math inline">\(y\)</span>축에 가깝고,</p>
+<p><span class="math inline">\(x&gt;1\)</span>에서는 <span class="math inline">\(a\)</span>의 값이 클수록 <span class="math inline">\(x\)</span>축에 가깝다.</p>
+<div id="cell-55" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:49:24.112310Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:49:22.682784Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>A<span class="op">=</span>[<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">16</span>]</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>logPlot(A)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-20-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="로그함수의-성질-및-특징" class="level4" data-number="1.4.2.3">
+<h4 data-number="1.4.2.3" class="anchored" data-anchor-id="로그함수의-성질-및-특징"><span class="header-section-number">1.4.2.3</span> 로그함수의 성질 및 특징</h4>
+<p><span class="math inline">\(a&gt;0\)</span>, <span class="math inline">\(a\neq 1\)</span>일 때, 로그함수 <span class="math inline">\(f(x)=\log_a x\)</span>는 양의 실수 전체의 집합에서 정의된 연속함수로 치역은 실수 전체의 집합이다.</p>
+<p><span class="math inline">\(a\)</span>가 <span class="math inline">\(1\)</span>이 아닌 양수일 때, 로그함수 <span class="math inline">\(y=\log_a x\)</span>에 대해 다음이 성립한다.</p>
+<ol type="1">
+<li><p>정의역은 양의 실수 전체의 집합이고, 치역은 실수 전체의 집합이다.</p></li>
+<li><p><span class="math inline">\(0 &lt; a &lt;1\)</span>일 때 <span class="math inline">\(y\)</span>는 감소함수이고, <span class="math inline">\(a &gt; 1\)</span>이면 <span class="math inline">\(y\)</span>는 증가함수다.</p></li>
+<li><p>그래프는 점 <span class="math inline">\((1, 0)\)</span>을 지나고, <span class="math inline">\(y\)</span>축을 <a href="https://terms.naver.com/entry.naver?docId=3340674&amp;ref=y">점근선</a>으로 한다.</p></li>
+</ol>
+<p>또, 로그함수 <span class="math inline">\(f(x)=\log_a x\)</span> <span class="math inline">\((a&gt;0\)</span>, <span class="math inline">\(a\neq 1)\)</span>는 다음을 만족한다.</p>
+<ol type="1">
+<li><p><span class="math inline">\(f(1)=0\)</span>, <span class="math inline">\(f(a)=1\)</span></p></li>
+<li><p><span class="math inline">\(f(pq)=f(p)+f(q)\)</span></p></li>
+<li><p><span class="math inline">\(f(\frac{p}{q})=f(p)-f(q)\)</span></p></li>
+<li><p><span class="math inline">\(f(p^n)=nf(p)\)</span>(단,<span class="math inline">\(n\)</span>은 실수)</p></li>
+</ol>
+</section>
+<section id="지수함수와-로그함수의-관계" class="level4" data-number="1.4.2.4">
+<h4 data-number="1.4.2.4" class="anchored" data-anchor-id="지수함수와-로그함수의-관계"><span class="header-section-number">1.4.2.4</span> 지수함수와 로그함수의 관계</h4>
+<p><a href="https://terms.naver.com/entry.naver?docId=3338306&amp;ref=y">지수함수</a>와 로그함수는 서로 역함수 관계이다. 즉, <span class="math inline">\(y=\log_a x\)</span> <span class="math inline">\((a&gt;0\)</span>, <span class="math inline">\(a\neq 1)\)</span>는 <span class="math inline">\(y = a^x\)</span>의 역함수이므로 로그함수의 그래프와 지수함수의 그래프는 직선 <span class="math inline">\(y=x\)</span>에 대해여 대칭이다.</p>
+<ol type="1">
+<li><span class="math inline">\(0&lt;a&lt;1\)</span>인 경우</li>
+</ol>
+<figure class="figure">
+<center>
+<img src="./images/로그함수3.jpg" width="30%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+</figcaption>
+</center>
+</figure>
+<p><span class="math inline">\(0&lt;a&lt;1\)</span> 일 때의 관계 그래프</p>
+<ol start="2" type="1">
+<li><span class="math inline">\(a&gt;1\)</span>인 경우</li>
+</ol>
+<figure class="figure">
+<center>
+<img src="./images/로그함수4.jpg" width="30%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+</figcaption>
+</center>
+</figure>
+<p><span class="math inline">\(a&gt;1\)</span> 일 때의 관계 그래프</p>
+<p><span class="math inline">\(y=a^x\cdot (a&gt;1)\)</span>이 <span class="math inline">\(x&gt;0\)</span>에서 급격히 증가하므로 그 역함수인 <span class="math inline">\(y=\log_a x\)</span>는 <span class="math inline">\(x&gt;1\)</span>에서 느리게 증가한다.</p>
+</section>
+</section>
+<section id="삼각함수와-지수함수의-관계" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="삼각함수와-지수함수의-관계"><span class="header-section-number">1.4.3</span> 삼각함수와 지수함수의 관계</h3>
+오일러의 공식은 수학자 레온하르트 오일러의 이름이 붙은 공식으로, 삼각함수와 지수함수에 대한 관계를 나타낸다.
+<div class="thm">
+<p><strong> 정리. </strong> <br></p>
+<p>실수 <span class="math inline">\(x\)</span>에 대해, 다음이 성립한다. <span class="math display">\[{e^{ix}} = \cos x + i\sin x\]</span> 여기서, <span class="math inline">\(e\)</span>는 자연로그의 밑인 상수이고, <span class="math inline">\(i\)</span>는 제곱하여 <span class="math inline">\(-1\)</span>이 되는(<span class="math inline">\({i^2} =  - 1\)</span>) 허수단위이다.</p>
+</div>
+<figure class="figure">
+<center>
+<img src="./images/eulerA.png" width="30%" align="right" class="figure-img">
+</center>
+<center>
+<figcaption>
+</figcaption>
+</center>
+</figure>
+<p><b>증명) </b> 이의 증명은 다음과 같다.</p>
+<p><span class="math display">\[\begin{align*}
+  f(x) &amp;= {e^{ - ix}}(\cos y + i\sin x) \\
+   \Rightarrow f'(x) &amp;=  - i{e^{ - ix}}(\cos x + i\sin x) + {e^{ - ix}}( - \sin x + i\cos x) \\
+   &amp;= {e^{ - ix}}( - i\cos x + \sin x - \sin x + i\cos x) = 0 \\
+\end{align*}\]</span></p>
+<p>가 되어서 <span class="math inline">\(f(x)=c\)</span>가 되고 상수 <span class="math inline">\(c\)</span>를 <span class="math inline">\(x = 0\)</span>을 대입하여 구하면 <span class="math inline">\(c=1\)</span>이 된다. 그러므로 ${e^{ ix}}=(x + ix) $임을 알수 있다. ■</p>
+</section>
+<section id="복소로그함수" class="level3" data-number="1.4.4">
+<h3 data-number="1.4.4" class="anchored" data-anchor-id="복소로그함수"><span class="header-section-number">1.4.4</span> 복소로그함수</h3>
+<section id="간단한-예시" class="level4" data-number="1.4.4.1">
+<h4 data-number="1.4.4.1" class="anchored" data-anchor-id="간단한-예시"><span class="header-section-number">1.4.4.1</span> 간단한 예시</h4>
+<p>오일러 공식 <span class="math inline">\(e^{ix} = \cos x + i \sin x\)</span>를 이용하면 <span class="math inline">\(\log (-1)\)</span>이 무엇인지 알 수 있다. 정수를 <span class="math inline">\(n\)</span>으로 나타낼 때 <span class="math inline">\(x=\pi+2n\pi = (2n+1)\pi\)</span>를 대입하면</p>
+<p><span class="math display">\[e^{i(\pi+2n\pi)}=\cos(\pi+2n\pi) + i\sin(\pi+2n\pi)=-1\]</span></p>
+<p>이므로, 양변에 로그를 취하면 다음과 같이 로그의 결과값으로 복소수가 튀어 나온다.</p>
+<p><span class="math display">\[\log (-1) = (2n+1)i\pi\]</span></p>
+<p>오일러 공식의 <span class="math inline">\(x\)</span>값에 적당한 다른 수를 대입함으로써 허수에 대한 로그값도 구할 수 있다. <span class="math inline">\(x = \dfrac\pi2+2n\pi = {\left(\dfrac12+2n\right)}\pi\)</span> 를 대입하면</p>
+<p><span class="math display">\[e^{i{\left(\frac\pi2+2n\pi\right)}} = \cos{\left(\dfrac\pi2+2n\pi\right)}+i\sin{\left(\dfrac\pi2+2n\pi\right)}=i\]</span></p>
+<p>이므로, 양변에 로그를 취하면 <span class="math display">\[\log (i) = {\left(\dfrac12+2n\right)}i\pi\]</span> 위 관계식에서 <span class="math inline">\(n=0\)</span>인 경우, <span class="math inline">\(\log\)</span>를 <span class="math inline">\(\rm Log\)</span>로 나타낸다.</p>
+</section>
+<section id="복소-로그함수" class="level4" data-number="1.4.4.2">
+<h4 data-number="1.4.4.2" class="anchored" data-anchor-id="복소-로그함수"><span class="header-section-number">1.4.4.2</span> 복소 로그함수</h4>
+<p><span class="math inline">\(z=x+iy\)</span>의 자연로그(natural logarithm)는 <span class="math inline">\(\ln  z\)</span>로 표시하고 지수함수의 역함수로 정의한다.</p>
+<p><span class="math display">\[\begin{align}
+&amp;~ \ln z=\ln r+i\theta \\
+&amp;~ \left( r=\left| z \right|&gt;0,\theta =\arg z \right) \\
+\end{align}\]</span></p>
+<p>이때, 실미적분학과 다른 점을 발견할 수 있다. <span class="math inline">\(z\)</span>의 편각은 $2<span class="math inline">\(의 임의의 정수배를 더한 값들로 결정되므로, 복소자연로그\)</span>z &nbsp;( z )<span class="math inline">\(는 무한히 많은 값을 갖는다.\)</span>z$에 상응하는 <span class="math inline">\(\ln  z\)</span>의 값을 <span class="math inline">\(\operatorname{Ln}z\)</span>로 표기하고, <span class="math inline">\(\ln z\)</span>의 주값(principal value)이라 부른다. 따라서,</p>
+<p><span class="math display">\[\operatorname{Ln}z=\ln \left| z \right|+i \operatorname{Arg}z\]</span></p>
+<p>이다. <span class="math inline">\(\operatorname{Arg} z\)</span>의 다른 값들은 $2$의 정수배만큼 다르므로 <span class="math inline">\(\ln  z\)</span>의 다른 값들은</p>
+<p><span class="math display">\[\ln z=\operatorname{Ln}z\pm 2n\pi i\]</span></p>
+<p>이 된다.</p>
+<div class="exa">
+<p><strong> 예제 </strong><br></p>
+<p>일러 정리를 이용하여 삼각함수의 덧셈정리를 증명하여라. <span class="math display">\[\begin{gathered}
+  \sin \left( {x \pm y} \right) = \sin x\cos y \pm \cos x\sin y, \\
+  \cos \left( {x \pm y} \right) = \cos x\cos y \mp \sin x\sin y \\
+\end{gathered} \]</span> 증명의 힌트) <span class="math inline">\({e^{ix}}{e^{iy}} = {e^{i(x + y)}}\)</span></p>
+</div>
+</section>
+</section>
+</section>
+<section id="역함수" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="역함수"><span class="header-section-number">1.5</span> 역함수</h2>
+<section id="역함수-1" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="역함수-1"><span class="header-section-number">1.5.1</span> 역함수</h3>
+<p><a href="https://terms.naver.com/entry.naver?docId=3338294&amp;ref=y">정의역</a>이 <span class="math inline">\(X\)</span>이고 <a href="https://terms.naver.com/entry.naver?docId=3338327&amp;ref=y">치역</a>이 <span class="math inline">\(Y\)</span>인 함수 <span class="math inline">\(y=f(x)\)</span>에 대하여,</p>
+<p>정의역을 <span class="math inline">\(Y\)</span>로, 치역을 <span class="math inline">\(X\)</span>로 가지며 <span class="math inline">\(x=g(y)\)</span>를 만족하는 함수 <span class="math inline">\(g\)</span>를 ’<span class="math inline">\(f\)</span>의 <a href="https://terms.naver.com/entry.naver?docId=3338284&amp;ref=y">역함수</a>’라고 하며, 일반적으로 <span class="math inline">\(f^{-1}\)</span>로 나타낸다.</p>
+<p>임의의 함수와 그 함수 자신의 역함수를 합성하면 <a href="https://terms.naver.com/entry.naver?docId=3338323&amp;ref=y">항등함수</a>가 된다.</p>
+<p>주어진 함수가 역함수를 가지기 위해서는 반드시 <a href="https://terms.naver.com/entry.naver?docId=3338254&amp;ref=y">단사함수</a>여야 한다.</p>
+<div class="exa">
+<p><strong>예제 </strong><br></p>
+<p>함수 <span class="math inline">\(f(x)=x^2\)</span>은 정의역에 따라 역함수가 존재할 수도 있고, 존재하지 않을 수도 있다.</p>
+<p>만약 정의역이 <span class="math inline">\(0\)</span>이 아닌 실수라면, <span class="math inline">\(y=x^2\)</span>에 대응하는 정의역 내의 값은 <span class="math inline">\(\pm x\)</span>로 두 개가 존재하므로 역함수가 존재하지 않는다.</p>
+<p>반면, 정의역을 양의 실수로 가정한다면 각 함숫값에 대응하는 정의역 내의 값은 양수 하나만 존재하므로 이 함수는 단사함수이며 동시에 역함수가 존재하게 된다.</p>
+</div>
+<div class="exa">
+<p><strong>예제 </strong><br></p>
+<p><span class="math inline">\(y= 2x + 1\)</span>의 역함수를 구하여라.</p>
+</div>
+<p><b>풀이) </b> 역함수는 <span class="math inline">\(y=x\)</span>에 대칭이므로 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>를 바꾸면 <span class="math inline">\(x=2y+1\)</span>이 되고 구하고자 하는 역함수는 <span class="math inline">\(y= \dfrac{ x-1}{2 }\)</span>이다. ■</p>
+<div class="thm">
+<p><strong> 정리. </strong> <br></p>
+<p>모든 실수 <span class="math inline">\(x\)</span>에 대하여 <span class="math inline">\(f'(x) &gt;0\)</span>(또는 <span class="math inline">\(f ' (x)&lt;0\)</span>)이면 함수 <span class="math inline">\(f\)</span>는 역함수를 가진다.</p>
+</div>
+<p><b>증명) </b> 아직 미분부분이 나오지 않았지만 고등학교 때 선수 학습으로 미분값이 항상 양인(항상 음인)함수는 증가함수(감소함수)임을 알고 있을 것이다. ■</p>
+<div class="exa">
+<p><strong> 예제 </strong><br> 함수 <span class="math inline">\(f(x)=x ^ {7} + 5 x ^ {3} + 2x +2\)</span>의 역함수가 존재함을 보이고 <span class="math inline">\(f ^ {-1} (2)\)</span>와 <span class="math inline">\(f ^ {-1} (10)\)</span>을 구하여라.</p>
+</div>
+<p><b>풀이) </b> <span class="math inline">\(f'(x) = 7x ^ {6} +15x ^ {2} +2&gt;0\)</span>이므로 역함수가 존재하고 함수와 역함수의 관계에 의해 역함수를 구하지 않고 역함수의 함수 값을 구할 수 있다. 즉, <span class="math inline">\(f ^ {-1}(2)=x\)</span>로 두면 <span class="math inline">\(f(x)=2\)</span>이고 <span class="math inline">\(f(0)=2\)</span>이므로 <span class="math inline">\(f ^ {-1} (2)=0\)</span>이다. 같은 방법으로 <span class="math inline">\(f ^ {-1} (10)=1\)</span>임을 알 수 있다. ■</p>
+<div id="cell-66" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:49:40.956201Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:49:39.907111Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>var(<span class="st">'x y'</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>sol<span class="op">=</span>solve(<span class="fl">2.</span> <span class="op">==</span>x<span class="op">^</span><span class="dv">7</span> <span class="op">+</span> <span class="dv">5</span><span class="op">*</span>x<span class="op">^</span><span class="dv">3</span> <span class="op">+</span><span class="dv">2</span><span class="op">*</span>x <span class="op">+</span><span class="dv">2</span>,x, algorithm<span class="op">=</span><span class="st">'sympy'</span>,domain<span class="op">=</span><span class="st">'real'</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>sol[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>x == 0</code></pre>
+</div>
+</div>
+<div id="cell-67" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:54:12.787138Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:54:11.461373Z&quot;}}" data-scrolled="false">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>reset()</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy.utilities.exceptions <span class="im">import</span> SymPyDeprecationWarning</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>, category<span class="op">=</span>SymPyDeprecationWarning)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>, category<span class="op">=</span><span class="pp">DeprecationWarning</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>var(<span class="st">'x y'</span>)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>sol<span class="op">=</span>solve(<span class="fl">10.</span> <span class="op">==</span>x<span class="op">^</span><span class="dv">7</span> <span class="op">+</span> <span class="dv">5</span><span class="op">*</span>x<span class="op">^</span><span class="dv">3</span> <span class="op">+</span><span class="dv">2</span><span class="op">*</span>x <span class="op">+</span><span class="dv">2</span>,x, algorithm<span class="op">=</span><span class="st">'sympy'</span>,domain<span class="op">=</span><span class="st">'real'</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>sol[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>x == 1.00000000000000</code></pre>
+</div>
+</div>
+<div id="cell-68" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:54:14.770855Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:54:14.657312Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>var(<span class="st">'x y'</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>sol<span class="op">=</span>solve(<span class="fl">23.</span> <span class="op">==</span>x<span class="op">^</span><span class="dv">7</span> <span class="op">+</span> <span class="dv">5</span><span class="op">*</span>x<span class="op">^</span><span class="dv">3</span> <span class="op">+</span><span class="dv">2</span><span class="op">*</span>x <span class="op">+</span><span class="dv">2</span>,x, algorithm<span class="op">=</span><span class="st">'sympy'</span>,domain<span class="op">=</span><span class="st">'real'</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>sol[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>x == 1.31811533397231</code></pre>
+</div>
+</div>
+<div id="cell-69" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>var(<span class="st">'x,y'</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>f(x)<span class="op">=</span>x<span class="op">^</span><span class="dv">7</span> <span class="op">+</span> <span class="dv">5</span><span class="op">*</span>x<span class="op">^</span><span class="dv">3</span> <span class="op">+</span><span class="dv">2</span><span class="op">*</span>x <span class="op">+</span><span class="dv">2</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>diff(f(x),x)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>p1<span class="op">=</span>plot(f(x), x, <span class="op">-</span><span class="fl">2.5</span>,<span class="dv">2</span>, color<span class="op">=</span><span class="st">'blue'</span>)<span class="op">;</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> text(<span class="st">"$y=</span><span class="sc">%s</span><span class="st">$"</span><span class="op">%</span>latex(f(x)), (<span class="op">-</span><span class="fl">1.8</span>,<span class="dv">10</span>), fontsize<span class="op">=</span><span class="dv">15</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>p3 <span class="op">=</span> text(<span class="st">"$y'=</span><span class="sc">%s</span><span class="st">$"</span><span class="op">%</span>latex(diff(f(x),x)), (<span class="op">-</span><span class="fl">1.8</span>,<span class="dv">5</span>), fontsize<span class="op">=</span><span class="dv">15</span>, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>p4 <span class="op">=</span> plot(df, x, <span class="op">-</span><span class="fl">2.5</span>,<span class="dv">2</span>, color<span class="op">=</span><span class="st">'red'</span>)<span class="op">;</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>show(p1<span class="op">+</span>p2<span class="op">+</span>p3<span class="op">+</span>p4, ymax<span class="op">=</span><span class="dv">20</span>, ymin<span class="op">=-</span><span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-24-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="역함수의-합성" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="역함수의-합성"><span class="header-section-number">1.5.2</span> 역함수의 합성</h3>
+<p>만약 함수 <span class="math inline">\(f: X \rightarrow Y\)</span>의 역함수가 존재한다면</p>
+<p><span class="math inline">\(\qquad\)</span>모든<span class="math inline">\(x \in X\)</span>에 대하여 <span class="math inline">\(\qquad\)</span> <span class="math inline">\(f^{-1}(f(x))=x\)</span></p>
+<p>가 성립한다. 이를 함수의 합성을 이용하여 <span class="math display">\[f^{-1} \circ f = I\]</span>로 나타낼 수 있다. 단, <span class="math inline">\(I\)</span>는 집합 <span class="math inline">\(X\)</span>에서의 항등함수를 의미한다. 만약 합성을 함수들의 곱이라고 생각한다면, 역함수는 함수에 대한 곱의 역원이라고 말할 수 있다. 이는 <span class="math inline">\(f^{-1}\)</span>라는 표기의 유래를 설명해준다.</p>
+</section>
+<section id="역함수의-표기-삼각함수" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="역함수의-표기-삼각함수"><span class="header-section-number">1.5.3</span> 역함수의 표기 (삼각함수)</h3>
+<p>역함수의 표기법에서 위 첨자 <span class="math inline">\(-1\)</span>이 종종 혼동을 일으키기도 한다. 이는 특히 삼각함수나 쌍곡함수 등을 다룰 때 부각된다. <span class="math inline">\(f^{-1}(x)\)</span>는 역함수를 의미하는 반면, <span class="math inline">\(f(x)^{-1}\)</span>은 <span class="math inline">\(f(x)\)</span>의 역수를 의미한다. 이를 피하기 위하여 삼각함수에서는 확실히 구분되는 표현을 사용한다.</p>
+<p>예를 들어, <span class="math inline">\(\sin x\)</span>의 역함수는 <span class="math inline">\(\arcsin x\)</span>로 표기하며 ’아크사인엑스’라고 읽는다. 반면, <span class="math inline">\(\sin x\)</span>의 역수는 일반적으로 <span class="math inline">\(\csc x\)</span>로 표기하고 ’코시컨트엑스’라고 읽는다.</p>
+<p>다른 삼각함수 또는 쌍곡함수에서도 비슷하게 정의하여 사용된다.</p>
+</section>
+</section>
+<section id="역삼각함수와-쌍곡함수의-역함수" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="역삼각함수와-쌍곡함수의-역함수"><span class="header-section-number">1.6</span> 역삼각함수와 쌍곡함수의 역함수</h2>
+<section id="역삼각함수" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="역삼각함수"><span class="header-section-number">1.6.1</span> 역삼각함수</h3>
+<p>함수 <span class="math inline">\(y=x ^ {2}\)</span>는 일대일 함수가 아니므로 역함수가 존재하지 않지만 정의역을 <span class="math inline">\(x \geq 0\)</span>로 제한시키면 일대일 함수가 되므로 역함수를 구할 수 있다. 이런 관점에서 삼각함수의 역함수를 공부 해보자.</p>
+<div class="defn">
+<p><strong> 정의. 역사인함수(arcsine function) </strong> <br></p>
+<p><span class="math inline">\(\sin x\)</span>의 정의역을 <span class="math inline">\(\left [- \dfrac{ \pi }{2 }, \dfrac{ \pi }{ 2} \right ]\)</span>로 제한하면 일대일 함수가 되고 역함수가 존재하게 된다.</p>
+<p>역사인함수는 다음과 같이 정의한다.</p>
+<p><span class="math display">\[
+y=\sin  ^{-1} x \text{는 } \sin y=x \text{이고 } -{{ \pi} \over {2 }} \leq y \leq {{ \pi} \over {2 }}
+\]</span></p>
+<p>를 만족하는 함수이다.</p>
+</div>
+<p>역사인함수의 정의로부터</p>
+<p><span class="math inline">\(\sin (\sin ^ {-1} x)=x\)</span>, <span class="math inline">\(x \in [-1, 1]\)</span>이고 <span class="math inline">\(\sin ^ {-1} (\sin x)=x\)</span>, <span class="math inline">\(x \in \left [- \dfrac{ \pi }{2 }, \dfrac{ \pi }{ 2}\right ]\)</span>임을 알 수 있다.</p>
+<div id="cell-72" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-scrolled="false" data-execution_count="1">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sage.misc.verbose</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>set_verbose(<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>plot(asin(x), (x,<span class="op">-</span>pi<span class="op">/</span><span class="dv">2</span>,pi<span class="op">/</span><span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[1]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg ansi-bold">sage</span><span class="ansi-blue-fg ansi-bold">.</span><span class="ansi-blue-fg ansi-bold">misc</span><span class="ansi-blue-fg ansi-bold">.</span><span class="ansi-blue-fg ansi-bold">verbose</span>
+<span class="ansi-green-fg">      2</span> set_verbose(-<span class="ansi-green-fg">1</span>)
+<span class="ansi-green-fg">      3</span> plot(asin(x), (x,-pi/<span class="ansi-green-fg">2</span>,pi/<span class="ansi-green-fg">2</span>))
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'sage'</pre>
+</div>
+</div>
+</div>
+<div class="defn">
+<p><strong> 정의. 역코사인함수(arccosine function) </strong> <br></p>
+<p><span class="math inline">\(\cos x\)</span>의 정의역을 <span class="math inline">\([0,\pi ]\)</span>로 제한하면 일대일 함수가 되고 역함수가 존재하게 된다.</p>
+<p>역코사인함수는 다음과 같이 정의한다.</p>
+<p><span class="math display">\[y=\cos ^ {-1} x  \text{ 는 }  \cos y=x \text{ 이고 } 0 \leq y \leq \pi\]</span></p>
+<p>를 만족하는 함수이다.</p>
+</div>
+<p>역코사인함수의 정의로부터</p>
+<p><span class="math inline">\(\cos (\cos ^ {-1} x)=x\)</span>, <span class="math inline">\(x \in [-1, 1]\)</span>이고 <span class="math inline">\(\cos ^ {-1} (\cos x)=x\)</span>, <span class="math inline">\(x \in [0, \pi ]\)</span>임을 알 수 있다.</p>
+<figure class="figure">
+<center>
+<img src="./images/1장_함수Im21.png" width="30%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+</figcaption>
+</center>
+</figure>
+<figure class="figure">
+<center>
+<img src="./images/1장_함수Im22.png" width="30%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+</figcaption>
+</center>
+</figure>
+<div id="cell-74" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:56:38.754222Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:56:38.009234Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>plot([acos(x),cos(x)], (x,<span class="op">-</span>pi<span class="op">/</span><span class="dv">2</span>,pi<span class="op">/</span><span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-26-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="defn">
+<p><strong> 정의. 역탄젠트함수(arctangent function) </strong> <br></p>
+<p><span class="math inline">\(\tan x\)</span>의 정의역을 <span class="math inline">\(\left (- \dfrac{ \pi }{2 } ,\dfrac{\pi }{2} \right )\)</span>로 제한하면 일대일 함수가 되고 역함수가 존재한다.</p>
+<p>역탄젠트함수는 다음과 같이 정의한다.</p>
+<p><span class="math display">\[y=\tan ^ {-1} x  \text{ 는 } \tan y=x \text{ 이고 } -\dfrac{\pi }{2} &lt;y &lt; \dfrac{\pi }{2}\]</span></p>
+<p>를 만족하는 함수이다.</p>
+</div>
+<p>역탄젠트함수의 정의로부터</p>
+<p><span class="math inline">\(\tan (\tan ^ {-1} x)=x\)</span>, <span class="math inline">\(x \in (-\infty , \infty )\)</span>이고 <span class="math inline">\(\tan ^ {-1} (\tan x)=x\)</span>, <span class="math inline">\(x \in \left (-\dfrac{\pi }{2}, \dfrac{\pi }{2}\right )\)</span>임을 알 수 있다.</p>
+<p>유사한 방법으로 다른 삼각함수의 역함수를 다음과 같이 정의할 수 있다.</p>
+<div class="defn">
+<p><strong> 정의. 역코시컨트함수, 역시컨트함수, 역탄젠트함수 </strong> <br></p>
+<p>• 역시컨트함수 <span class="math inline">\(y=\sec ^ {-1} x ~( x \in (-\infty , -1 ] \cup [1, \infty ) )\)</span>는</p>
+<p>$ y=x $이고 <span class="math inline">\(y \in \left [0, \dfrac{ \pi }{2 }\right ) \cup \left ( \dfrac{ \pi }{ 2}, \pi \right ]\)</span></p>
+<p>를 만족하는 함수이다.</p>
+<p>• 역코시컨트함수 <span class="math inline">\(y=\csc ^ {-1} x ~( x \in (-\infty , -1 ] \cup [1, \infty ) )\)</span>는</p>
+<p><span class="math inline">\(\qquad \qquad \csc y=x\)</span>이고 <span class="math inline">\(y \in \left [-\dfrac{\pi }{2} , 0 \right ) \cup \left (0, \dfrac{ \pi }{ 2} \right ]\)</span></p>
+<p>를 만족하는 함수이다.</p>
+<p>• 역코탄젠트함수 <span class="math inline">\(y=\cot ^ {-1} x ~(x \in (-\infty , \infty ))\)</span>는</p>
+<p><span class="math inline">\(\qquad \qquad \cot y=x\)</span>이고 <span class="math inline">\(y \in (0, \pi )\)</span></p>
+<p>를 만족하는 함수이다.</p>
+</div>
+<div class="exa">
+<p><strong>예제 </strong><br></p>
+<p><span class="math inline">\(\sin ^ {-1} \left ( \dfrac{ 1}{ 2}\right )\)</span>을 계산하여라.</p>
+</div>
+<p><b>(풀이)</b><span class="math inline">\(\sin ^ {-1} \left ( \dfrac{ 1}{ 2}\right )=x\)</span>로 두면 <span class="math inline">\(-\dfrac{ \pi }{2 } \leq x \leq \dfrac{ \pi }{ 2}\)</span>이다. 역함수의 성질에 의해 <span class="math inline">\(\sin x = \dfrac{ 1}{2 }\)</span>이고 주어진 범위 내에서 <span class="math inline">\(x= \dfrac{ \pi }{6 }\)</span>가 된다. 그러므로 <span class="math inline">\(\sin ^ {-1} \left ( \dfrac{ 1}{ 2}\right )= \dfrac{ \pi }{ 6}\)</span>이다.■</p>
+<div id="cell-78" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>reset()<span class="op">;</span> load(<span class="st">'ch1.sage'</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span><span class="st">'asin(1/2)'</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle \sin^{-1}(1/2)=\frac{1}{6}  \pi</script>
+</div>
+</div>
+<div id="cell-79" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:57:00.333685Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:57:00.321405Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">123456</span>)<span class="op">^</span><span class="dv">30</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>556373003462553278521277665419333757914477429707861621164878013831986527054745197804565133259323738549131155563320488179330998057446584571938059401035776</code></pre>
+</div>
+</div>
+<div class="exa">
+<p><strong>예제 </strong><br></p>
+<p><span class="math inline">\(\sin \left [ 2\sin ^ {-1} \left ( - \dfrac{2}{3} \right ) \right ]\)</span>을 계산하여라.</p>
+</div>
+<p><b>(풀이)</b></p>
+<p><span class="math inline">\(\sin ^ {-1} \left (- \dfrac{ 2}{3 }\right )=x\)</span>로 두고 <span class="math inline">\(\sin 2x\)</span>값을 계산하면 된다. <span class="math inline">\(-\dfrac{ \pi }{ 2} \leq x \leq \dfrac{ \pi }{2 }\)</span>인 범위 내에서</p>
+<p><span class="math inline">\(\sin x =- \dfrac{ 2}{3 }\)</span>이고 4사분면에 직각삼각형을 이용하게 되면 <span class="math inline">\(\cos x= \dfrac{ \sqrt { 5} }{ 3}\)</span>이다.</p>
+<p>그러므로 <span class="math inline">\(\sin \left [2 \sin ^ {-1} \left (- \dfrac{ 2}{3 }\right ) \right ]=\sin 2x=2\sin x \cos x=2\left (- \dfrac{2}{3}\right )\left ( \dfrac{ \sqrt { 5} }{3 }\right )\)</span><span class="math inline">\(=- \dfrac{ 4 \sqrt { 5} }{ 9}\)</span>이다.■</p>
+<div id="cell-81" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:57:05.281814Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:57:04.732971Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span><span class="st">'sin(2*asin(-2/3))'</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle \sin(2\sin^{-1}(-2/3))=-\frac{4}{9}  \sqrt{5}</script>
+</div>
+</div>
+<div id="cell-82" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span><span class="st">'asin(1/sqrt(2))'</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle \sin^{-1}(1/\sqrt{2})=\frac{1}{4}  \pi</script>
+</div>
+</div>
+<div class="exa">
+<p><strong>예제 </strong><br></p>
+<p><span class="math inline">\(\cos ^ {-1} \left (- \dfrac{ 1}{ 2}\right )\)</span>을 계산하여라.</p>
+</div>
+<p><b>(풀이)</b><span class="math inline">\(\cos ^ {-1} \left (- \dfrac{ 1}{ 2}\right )=x\)</span>로 두면 <span class="math inline">\(0 \leq x \leq \pi\)</span>이다. 역함수의 성질에 의해 <span class="math inline">\(\cos x =- \dfrac{ 1}{2 }\)</span>이고 <span class="math inline">\(x= \dfrac{ 2}{3 }\pi\)</span>이다. 그러므로 <span class="math inline">\(\cos ^ {-1} \left (- \dfrac{ 1}{ 2}\right )= \dfrac{ 2}{3}\pi\)</span>이다.■</p>
+<div id="cell-84" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:57:18.279434Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:57:18.241256Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span><span class="st">'acos(-1/2)'</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle \cos^{-1}(-1/2)=\frac{2}{3}  \pi</script>
+</div>
+</div>
+<div class="exa">
+<p><strong>예제 </strong><br></p>
+<p><span class="math inline">\(\cos \left [\cos ^ {-1} \left (-\dfrac{ 4}{5 }\right ) +\sin ^ {-1} \left (- \dfrac{ 12}{ 13}\right ) \right ]\)</span>을 계산하여라.</p>
+</div>
+<p><b>(풀이)</b><span class="math inline">\(\cos ^ {-1} \left (- \dfrac{ 4}{5 }\right )=x\)</span>, <span class="math inline">\(\sin ^ {-1} \left (- \dfrac{ 12}{ 13}\right )=y\)</span>로 두고 <span class="math inline">\(\cos (x+y)\)</span>값을 구하면 된다.</p>
+<p><span class="math inline">\(0\leq x \leq \pi\)</span>이고 <span class="math inline">\(-\dfrac{ \pi }{2 } \leq y \leq \dfrac{ \pi }{ 2}\)</span>이며 삼각비를 잘 이용하면</p>
+<p><span class="math inline">\(\cos (x+y)=\cos x \cos y-\sin x \sin y=\left (- \dfrac{ 4}{5 }\right ) \dfrac{ 5}{ 13}- \dfrac{ 3}{5 }\left (- \dfrac{ 12}{ 13}\right )= \dfrac{ 16}{ 65}\)</span>이다.■</p>
+<p><a href="https://www.symbolab.com/solver/trigonometric-simplification-calculator/simplify%20cos%5Cleft(arccos%5Cleft(-4%2F5%5Cright)%2Barcsin%5Cleft(-12%2F13%5Cright)%5Cright)?or=input">cos(acos(-4/5)+asin(-12/13))</a></p>
+<div id="cell-86" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">'cos(acos(-4/5)+asin(-12/13))'</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle \cos(\cos^{-1}(-4/5)+\sin^{-1}(-12/13))=\frac{16}{65}</script>
+</div>
+</div>
+<div id="cell-87" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:57:26.479428Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:57:26.465235Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">123456</span>)<span class="op">**</span><span class="dv">30</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>556373003462553278521277665419333757914477429707861621164878013831986527054745197804565133259323738549131155563320488179330998057446584571938059401035776</code></pre>
+</div>
+</div>
+<div class="exa">
+<p><strong>예제 10</strong><br></p>
+<p><span class="math inline">\(\tan ^ {-1} (-1)\)</span>을 계산하여라.</p>
+</div>
+<p><b>(풀이)</b><span class="math inline">\(\tan ^ {-1} ( -1)=x\)</span>로 두면 <span class="math inline">\(-\dfrac{\pi }{2} &lt; x &lt; \dfrac{ \pi }{2}\)</span>이다. 역함수의 성질에 의해 <span class="math inline">\(\tan x = -1\)</span>이고 <span class="math inline">\(x= -\dfrac{ \pi }{4 }\)</span>이므로 <span class="math inline">\(\tan ^ {-1} (-1)= -\dfrac{ \pi }{ 4}\)</span>이다.■</p>
+<div id="cell-89" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:57:29.148710Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:57:29.114280Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span>  <span class="st">'acot(-1)'</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle \cot^{-1}(-1)=-\frac{1}{4}  \pi</script>
+</div>
+</div>
+<div class="exa">
+<p><strong>예제 </strong><br></p>
+<p>다음 역삼각함수 값을 구하여라.</p>
+<ol type="1">
+<li><p>$ ^ {-1} (-2) <span class="math inline">\((2)\)</span> ^ {-1} (-1) $</p></li>
+<li><p><span class="math inline">\(\csc ^ {-1} \left ( \dfrac{2}{\sqrt {3}} \right )\)</span></p></li>
+</ol>
+</div>
+<p><b>(풀이)</b>(1) <span class="math inline">\(\sec ^ {-1} \left ( -2 \right ) =x\)</span>라 두면 <span class="math inline">\(x \in \left [ 0, \dfrac{\pi }{2} \right ) \cup \left ( \dfrac{\pi }{2} , \pi \right ]\)</span>이고 이 범위 내에서 <span class="math inline">\(\sec x=-2\)</span>을 만족하는</p>
+<p><span class="math inline">\(x\)</span>를 찾으면 된다. 그러므로 <span class="math inline">\(\sec ^ {-1} (-2)= \dfrac{2}{3} \pi\)</span>이다.</p>
+<ol start="2" type="1">
+<li><p><span class="math inline">\(\cot ^ {-1} (-1)=y\)</span>라 두면 <span class="math inline">\(y \in (0,\pi )\)</span>이고 이 범위 내에서 <span class="math inline">\(\cot y=-1\)</span>을 만족하는 <span class="math inline">\(y\)</span>를 찾으면 <span class="math inline">\(y= \dfrac{ 3}{4 }\pi\)</span>이고 <span class="math inline">\(\cot ^ {-1} (-1)= \dfrac{ 3}{4 }\pi\)</span>이다.</p></li>
+<li><p><span class="math inline">\(\csc ^ {-1} \left ( \dfrac{2}{\sqrt {3}} \right )=t\)</span>라 두면 <span class="math inline">\(t \in \left [ - \dfrac{ \pi }{2 } ,0 \right ) \cup \left (0, \dfrac{ \pi }{ 2} \right ]\)</span>이고 이 범위 내에서 <span class="math inline">\(\csc t= \dfrac{ 2}{ \sqrt { 3} }\)</span>을 만족하는 <span class="math inline">\(t\)</span>를 찾으면 <span class="math inline">\(t= \dfrac{ \pi }{ 3}\)</span>이고 <span class="math inline">\(\csc ^ {-1} \left ( \dfrac{2}{\sqrt {3}} \right )= \dfrac{ \pi }{3 }\)</span>이다.■</p></li>
+</ol>
+<div id="cell-91" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:57:32.236831Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:57:32.201166Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span><span class="st">'asec(-2)'</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle \sec^{-1}(-2)=\frac{2}{3}  \pi</script>
+</div>
+</div>
+<div id="cell-92" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:57:33.745583Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:57:33.713243Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span><span class="st">'acot(-1)'</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle \cot^{-1}(-1)=-\frac{1}{4}  \pi</script>
+</div>
+</div>
+<div id="cell-93" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:57:35.494280Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:57:35.465508Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span><span class="st">'acsc(2/sqrt(3))'</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle \csc^{-1}(2/\sqrt{3})=\frac{1}{3}  \pi</script>
+</div>
+</div>
+<div id="cell-94" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:57:36.850878Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:57:36.809006Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span><span class="st">'tan(asec(2))'</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle \tan(\sec^{-1}(2))=\sqrt{3}</script>
+</div>
+</div>
+<div id="cell-95" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">'tan(atan(-3/5)+acos(-sqrt(2)/2))'</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle \tan(\tan^{-1}(-3/5)+\cos^{-1}(-\sqrt{2}/2))=-4</script>
+</div>
+</div>
+<div id="cell-96" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span>  <span class="st">'2*atan(1/3)  - atan(-1/7) '</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle 2\tan^{-1}(1/3)  - \tan^{-1}(-1/7) =\frac{1}{4}  \pi</script>
+</div>
+</div>
+<div id="cell-98" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:57:43.649438Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:57:43.608918Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co">#뉴턴의 서펜타인 serpentine - 책교정필요 p.51</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span>   <span class="st">'2*sin(2*atan(x))'</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle 2\sin(2\tan^{-1}(x))=\frac{4  x}{x^{2} + 1}</script>
+</div>
+</div>
+<div id="cell-99" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:57:45.365827Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:57:45.337265Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span>   <span class="st">'2*sin(2*atan(-2))'</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle 2\sin(2\tan^{-1}(-2))=-\frac{8}{5}</script>
+</div>
+</div>
+<div id="cell-100" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:57:47.378447Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:57:47.313259Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span>   <span class="st">'cos(2*asec(x))'</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>TrigEval(s)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex">\displaystyle \cos(2\sec^{-1}(x))=-\frac{x^{2} - 2}{x^{2}}</script>
+</div>
+</div>
+</section>
+<section id="쌍곡함수의-역함수" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="쌍곡함수의-역함수"><span class="header-section-number">1.6.2</span> 쌍곡함수의 역함수</h3>
+</section>
+<section id="쌍곡함수" class="level3" data-number="1.6.3">
+<h3 data-number="1.6.3" class="anchored" data-anchor-id="쌍곡함수"><span class="header-section-number">1.6.3</span> 쌍곡함수</h3>
+<p><a href="https://terms.naver.com/entry.naver?docId=3338306&amp;ref=y">지수함수</a>를 이용하여</p>
+<p><span class="math display">\[\sinh x =\frac{e^x - e^{-x}}2,\qquad
+\cosh x=\frac{e^x + e^{-x}}2
+\]</span></p>
+<p>으로 정의된 함수들을 각각 <strong>쌍곡사인함수</strong>, <strong>쌍곡코사인함수</strong>라고 하며, 이를 바탕으로</p>
+<p><span class="math display">\[ \tanh x = \frac{\sinh x}{\cosh x}, \quad \coth x = \frac{\cosh x}{\sinh x},
+\quad
+\text{sech} x = \frac{1}{\cosh x}, \quad \text{csch} x = \frac{1}{\sinh x} \]</span></p>
+<p>등의 <a href="https://terms.naver.com/entry.naver?docId=3338349&amp;ref=y">쌍곡함수</a>를 얻는다.</p>
+<section id="쌍곡함수의-도함수와-그래프" class="level4" data-number="1.6.3.1">
+<h4 data-number="1.6.3.1" class="anchored" data-anchor-id="쌍곡함수의-도함수와-그래프"><span class="header-section-number">1.6.3.1</span> 쌍곡함수의 도함수와 그래프</h4>
+<p>쌍곡사인함수와 쌍곡코사인함수의 <a href="https://terms.naver.com/entry.naver?docId=3338255&amp;ref=y">도함수</a>는 다음</p>
+<p><span class="math display">\[\begin{align}
+&amp;\frac d{dx}\sinh x =\frac{e^x+e^{-x}}2=\cosh x\\
+&amp;\frac d{dx}\cosh x =\frac{e^x-e^{-x}}2=\sinh x
+\end{align}\]</span></p>
+<p>과 같이 바로 구할 수 있다. 또한, 관계식</p>
+<p><span class="math display">\[\sinh(-x)=-\sinh x,\ \cosh(-x)=\cosh x\]</span></p>
+<p>로부터 알 수 있는 대칭성을 이용하여 그 그래프를 그릴 수 있다.</p>
+<div id="cell-103" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>plot(sinh(x), (x,<span class="op">-</span>pi<span class="op">/</span><span class="dv">2</span>,pi<span class="op">/</span><span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-45-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-104" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>plot(cosh(x), (x,<span class="op">-</span>pi,pi), ymin<span class="op">=</span><span class="dv">0</span>, ymax<span class="op">=</span><span class="dv">9</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-46-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>위의 그래프에서 알 수 있듯이, 쌍곡사인함수는 일대일 함수이므로 <a href="https://terms.naver.com/entry.naver?docId=3338284&amp;ref=y">역함수</a>를 가진다. 이를 <a href="https://terms.naver.com/entry.naver?docId=3405218&amp;ref=y">역쌍곡사인함수</a>라고 하며 <span class="math inline">\(\sinh^{-1}\)</span>로 표시한다.</p>
+<p>간단한 이차방정식을 풀면 그 역함수를 구할 수 있는데, 역쌍곡사인함수는</p>
+<p><span class="math display">\[\sinh^{-1} x= \ln (x+\sqrt{x^2+1})
+\]</span></p>
+<p>이다. 마찬가지로 <span class="math inline">\(x\ge 1\)</span>의 범위에서 역쌍곡코사인함수도 구할 수 있는데,</p>
+<p><span class="math display">\[\cosh^{-1} x= \ln (x+\sqrt{x^2-1})
+\]</span></p>
+<p>이다. 이 함수들의 도함수는</p>
+<p><span class="math display">\[\begin{align}
+\frac d{dx}\sinh^{-1}x &amp;=\frac 1{\sqrt{x^2+1}}\\
+\frac d{dx}\cosh^{-1}x &amp;=\frac 1{\sqrt{x^2-1}},\quad x&gt;1\\
+\end{align}\]</span></p>
+<p>이다. 따라서 역쌍곡함수들은 <a href="https://terms.naver.com/entry.naver?docId=4125284&amp;ref=y">무리함수</a>의 <a href="https://terms.naver.com/entry.naver?docId=3338145&amp;ref=y">적분</a>, 즉 <a href="https://terms.naver.com/entry.naver?docId=3338287&amp;ref=y">원시함수</a>를 구하는 데에 요긴하게 쓰일 수 있다.</p>
+<div id="cell-106" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>var(<span class="st">'x y'</span>)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span>solve(y<span class="op">==</span>(e<span class="op">^</span>x <span class="op">-</span>e<span class="op">^</span>(<span class="op">-</span>x))<span class="op">/</span><span class="dv">2</span>,x)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>show(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left[x = \log\left(y - \sqrt{y^{2} + 1}\right), x = \log\left(y + \sqrt{y^{2} + 1}\right)\right]</script>
+</div>
+</div>
+</section>
+<section id="역쌍곡삼각함수" class="level4" data-number="1.6.3.2">
+<h4 data-number="1.6.3.2" class="anchored" data-anchor-id="역쌍곡삼각함수"><span class="header-section-number">1.6.3.2</span> 역쌍곡삼각함수</h4>
+<p><span class="math inline">\(\sinh x,\tanh x\)</span>는 일대일 함수이므로 각각 역함수가 존재하고 <span class="math inline">\(\cosh x\)</span>은 정의역을 <span class="math inline">\([0, \infty )\)</span>로 제한하면 역함수가 존재한다. 쌍곡삼각함수들이 지수함수에 의해 정의되므로 역함수는 다음과 같이 표현된다.</p>
+<div class="defn">
+<p><strong> 정의. 쌍곡삼각함수의 역함수</strong> <br></p>
+<p>쌍곡삼각함수의 역함수는 다음과 같다.</p>
+<p><span class="math display">\[ y=\sinh ^ {-1} x~=\ln  \left ( x+ \sqrt {x ^ {2} +1} \right ) ,~x \in {\mathbb R} ~\Leftrightarrow ~\sinh y=x
+\]</span></p>
+<p><span class="math display">\[y=\cosh ^ {-1} x=\ln  \left ( x+ \sqrt {x ^ {2} -1} \right ) ,~x \geq 1~ \Leftrightarrow ~\cosh y=x \text{ 이고 } y \geq 0\]</span></p>
+<p><span class="math display">\[ y=\tanh ^ {-1} x= \dfrac{1}{2} \ln \left ( \dfrac{1+x}{1-x} \right ) ,~-1&lt;x&lt;1~ \Leftrightarrow ~\tanh y=x
+\]</span></p>
+</div>
+<figure class="figure">
+<center>
+<img src="./images/1장_함수Im31.png" width="80%" align="center" class="figure-img">
+</center>
+<center>
+<figcaption>
+</figcaption>
+</center>
+</figure>
+<div id="cell-108" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:58:03.866112Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:58:03.425683Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>plot(asinh(x), (x,<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-48-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-109" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:58:06.435738Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:58:05.897621Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>point((<span class="dv">0</span>,<span class="dv">0</span>))<span class="op">+</span>plot(acosh(x), (x,<span class="dv">1</span>,<span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-49-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-110" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2026-03-08T15:58:09.092620Z&quot;,&quot;start_time&quot;:&quot;2026-03-08T15:58:08.561832Z&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>plot(atanh(x), (x,<span class="op">-</span><span class="fl">1.</span>,<span class="fl">1.</span>), aspect_ratio<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<div>
+<figure class="figure">
+<p><img src="01장_함수_files/figure-html/cell-50-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="exa">
+<p><strong>예제 </strong><br></p>
+<p><span class="math inline">\(\sinh ^ {-1} x~=\ln  \left ( x+ \sqrt {x ^ {2} +1} \right )\)</span>임을 증명하여라.</p>
+</div>
+<p><b>(풀이)</b><span class="math inline">\(y=\sinh ^ {-1} x\)</span>라 놓으면 <span class="math inline">\(x=\sinh y= \dfrac{e ^ {y} -e ^ {-y}}{2}\)</span>이다. 그러므로 <span class="math inline">\(2x=e ^ {y} -e ^ {-y}\)</span>이고 양변에 <span class="math inline">\(e ^ {y}\)</span>를 곱하면 <span class="math inline">\(2e ^ {y} x=e ^ {2y} -1\)</span>이다. 마지막 식을 다시 정리하면 <span class="math inline">\((e ^ {y} ) ^ {2} -2x(e ^ {y} ) ^ {} -1=0\)</span>인 이차방정식이 된다. 따라서 근의 공식에 의해서 <span class="math inline">\(e ^ {y} =x± \sqrt {x ^ {2} +1}\)</span>이다. 그러나 <span class="math inline">\(e ^ {y} &gt;0\)</span>이므로</p>
+<p><span class="math inline">\(e ^ {y} =x+ \sqrt {x ^ {2} +1}\)</span>이다. 그러므로 <span class="math inline">\(y=\ln  \left ( x+ \sqrt {x ^ {2} +1}\right )\)</span>이다.■</p>
+<div id="cell-112" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>f(x)<span class="op">=</span>ln(x<span class="op">+</span>sqrt(<span class="dv">1</span><span class="op">+</span>x<span class="op">^</span><span class="dv">2</span>))</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>g(x)<span class="op">=</span>sinh(x)</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>html( g(f(x)).simplify_trig().full_simplify() )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="35">
+<script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}x</script>
+</div>
+</div>
+<div id="cell-113" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
+<details class="code-fold">
+<summary>코드 보기</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>html(cos(<span class="dv">2</span><span class="op">*</span>atan(x)).simplify_trig().full_simplify())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}-\frac{x^{2} - 1}{x^{2} + 1}</script>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+</section></section></section></main></div>
+
+
+
+
+ <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+ <!-- /content -->
+
+
+
+
+</body></html>
