@@ -1,0 +1,83 @@
+/* 블록 수식을 더 크게, 중앙에서 눈에 띄게 표시합니다. */
+.math.display,
+.MathJax_Display,
+.mjx-container[jax="CHTML"][display="true"] {
+  font-size: 1.35em;
+  text-align: center;
+  margin: 1.2rem auto;
+  padding: 0.4rem 0;
+}
+
+/* 인라인 수식도 읽기 좋게 약간 강조합니다. */
+.math.inline,
+.mjx-container[jax="CHTML"] {
+  font-size: 1.05em;
+}
+
+/* 중요 수식을 카드처럼 강조하고 중앙 배치할 때 사용합니다. */
+.math-focus {
+  max-width: 760px;
+  margin: 1.4rem auto;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  background: #f8fbff;
+  border: 1px solid #d9e8ff;
+  box-shadow: 0 8px 18px rgba(30, 58, 138, 0.08);
+}
+
+/* 커스텀 2열 레이아웃: 왼쪽 TOC, 오른쪽 본문 */
+.study-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.study-sidebar {
+  position: sticky;
+  top: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #f8fbff;
+  border: 1px solid #d9e8ff;
+}
+
+.study-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.study-sidebar ul {
+  padding-left: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.study-sidebar a {
+  color: #1f4dbb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.study-sidebar a:hover {
+  text-decoration: underline;
+}
+
+.sidebar-help {
+  color: #4b5563;
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+.study-main {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .study-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .study-sidebar {
+    position: static;
+  }
+}
