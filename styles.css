@@ -1,0 +1,293 @@
+/*
+    페이지 전체에 공통으로 적용할 기본 설정입니다.
+    box-sizing을 border-box로 두면 크기 계산이 쉬워집니다.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 페이지 기본 글꼴과 배경색을 설정합니다. */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f3f7ff, #dfefff);
+    color: #1f2937;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 전체 영역의 최소 높이를 화면 높이만큼 지정합니다. */
+.page-wrapper {
+    min-height: 100vh;
+}
+
+/* 상단 헤더는 로고와 메뉴를 양쪽으로 배치합니다. */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 0.85);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+}
+
+/* 사이트 이름 스타일입니다. */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* 메뉴 목록을 가로로 정렬합니다. */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+/* 메뉴 링크의 기본 모양입니다. */
+.main-nav a {
+    text-decoration: none;
+    color: #1d4ed8;
+    font-weight: 600;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/* 마우스를 올렸을 때 메뉴 색을 바꿉니다. */
+.main-nav a:hover {
+    color: #0f172a;
+    border-color: #93c5fd;
+}
+
+/* 메인 소개 영역을 화면 중앙에 배치합니다. */
+.hero-section {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* 소개 글 박스입니다. */
+.intro-card {
+    width: 100%;
+    max-width: 720px;
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+    text-align: center;
+}
+
+/* 제목과 본문 사이 간격을 조절합니다. */
+.intro-card h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.intro-card p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+/* 미적분학 페이지 전체 영역입니다. */
+.calculus-page {
+    max-width: 1120px;
+    margin: 0 auto 32px;
+    padding: 40px 20px 20px;
+}
+
+/* 미적분학 학습 페이지를 감싸는 카드입니다. */
+.calculus-shell {
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 28px;
+    padding: 32px;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.section-heading {
+    margin-bottom: 28px;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.section-heading h1,
+.section-heading h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.section-description {
+    line-height: 1.7;
+    color: #475569;
+}
+
+/* 목차와 본문을 2단으로 나눕니다. */
+.calculus-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.toc-card,
+.chapter-card {
+    background: #f8fbff;
+    border-radius: 22px;
+    border: 1px solid #dbeafe;
+    box-shadow: 0 12px 24px rgba(59, 130, 246, 0.08);
+}
+
+.toc-card {
+    padding: 24px;
+    position: sticky;
+    top: 96px;
+}
+
+.toc-card h3 {
+    margin-bottom: 16px;
+    color: #0f172a;
+}
+
+.toc-list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+}
+
+/* 버튼처럼 보여도 HTML에서는 의미 있는 클릭 요소입니다. */
+.toc-button {
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 16px;
+    background-color: #eff6ff;
+    color: #1e3a8a;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toc-button:hover,
+.toc-button.is-active {
+    background-color: #dbeafe;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.16);
+}
+
+.chapter-panel {
+    min-height: 420px;
+}
+
+.chapter-card {
+    padding: 28px;
+    min-height: 100%;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.chapter-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    border-color: #93c5fd;
+}
+
+.chapter-card.is-changing {
+    opacity: 0.3;
+    transform: translateY(8px);
+}
+
+.chapter-number {
+    margin-bottom: 10px;
+    color: #2563eb;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.chapter-card h3 {
+    margin-bottom: 14px;
+    font-size: 1.45rem;
+}
+
+.chapter-card p {
+    line-height: 1.8;
+    color: #334155;
+    margin-bottom: 12px;
+}
+
+/* About, Contact 영역 공통 스타일입니다. */
+.info-section {
+    max-width: 720px;
+    margin: 0 auto 32px;
+    padding: 24px 20px;
+    background-color: rgba(255, 255, 255, 0.88);
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.info-section h2 {
+    margin-bottom: 12px;
+    color: #0f172a;
+}
+
+.info-section p {
+    line-height: 1.7;
+}
+
+/* 화면이 좁아지면 메뉴가 세로 느낌에 가깝게 정리되도록 조정합니다. */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .main-nav ul {
+        gap: 16px;
+    }
+
+    .intro-card {
+        padding: 28px 22px;
+    }
+
+    .intro-card h1 {
+        font-size: 1.8rem;
+    }
+
+    .calculus-shell {
+        padding: 24px;
+    }
+
+    .calculus-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .toc-card {
+        position: static;
+    }
+}
